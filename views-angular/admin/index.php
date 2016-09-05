@@ -1,7 +1,7 @@
    <!-- Page Heading -->
    <ol class="breadcrumb">
     <li>
-      <i class="fa fa-dashboard"></i><a href="admin#index"> {{ header }} </a>
+      <i class="fa fa-home"></i><a href="admin#index"> {{ header }} </a>
     </li>
   </ol>
 

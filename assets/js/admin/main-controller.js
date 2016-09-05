@@ -8,7 +8,7 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 
 	cfpLoadingBar.set(0.5);
 
-	$scope.header = 'Administrator';
+	$scope.header = 'Home';
 
 	cfpLoadingBar.complete();
 	

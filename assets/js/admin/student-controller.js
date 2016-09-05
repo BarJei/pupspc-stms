@@ -6,7 +6,7 @@ app.controller('studentCreateController', function ($http, $scope, cfpLoadingBar
 	var assetsImages = base_url+'/assets/images/';
 	$scope.source = assetsImages;
 
-	$scope.header = 'Student';
+	$scope.header = 'Students';
 
 	cfpLoadingBar.complete();
 	

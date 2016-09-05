@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                   <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                      <a href="#index"><i class="fa fa-fw fa-dashboard"></i> Home </a>
+                      <a href="#index"><i class="fa fa-fw fa-home"></i> Home </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);" data-toggle="collapse" data-target="#students"><i class="fa fa-fw fa-users"></i> Students <i class="fa fa-fw fa-caret-down"></i></a>
@@ -49,7 +49,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="javascript:void(0);" data-toggle="collapse" data-target="#timelogs"><i class="fa fa-fw fa-users"></i> Time Logs <i class="fa fa-fw fa-caret-down"></i></a>
+                      <a href="javascript:void(0);" data-toggle="collapse" data-target="#timelogs"><i class="fa fa-fw fa-clock-o"></i> Time Logs <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="timelogs" class="collapse">
                         <li>
                           <a href="#timelogs-guard"> Guard </a>
@@ -60,7 +60,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="javascript:void(0);" data-toggle="collapse" data-target="#offenses"><i class="fa fa-fw fa-users"></i> Offenses <i class="fa fa-fw fa-caret-down"></i></a>
+                      <a href="javascript:void(0);" data-toggle="collapse" data-target="#offenses"><i class="fa fa-fw fa-warning"></i> Offenses <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="offenses" class="collapse">
                         <li>
                           <a href="#create-offense"> Create </a>
