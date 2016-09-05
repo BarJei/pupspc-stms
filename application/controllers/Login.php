@@ -9,7 +9,7 @@ class Login extends CI_Controller {
 
 	function index() {
 		if($this->session->admin) {
-			redirect("admin", "refresh");
+			redirect("admin/admin", "refresh");
 		}
 		if($this->session->user) {
 			redirect("user", "refresh");
@@ -58,11 +58,13 @@ class Login extends CI_Controller {
 
 				if($userData->isAdmin == 1) {
 					$this->session->set_userdata("admin", $userData);
-					redirect("admin", "refresh");
+					redirect("admin/admin", "refresh");
 				}
 
+				else {
 				$this->session->set_userdata("user", $userData->username);
 				redirect("user", "refresh");
+				}
 			}	
 		}
 	}

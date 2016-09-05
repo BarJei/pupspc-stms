@@ -11,6 +11,11 @@ var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angular-loading-bar', 
       controller: 'mainController'
     })
 
+     .when('/create-student', {
+      templateUrl: view_path + '/student-create.php',
+      controller: 'studentCreateController'
+    })
+
      .otherwise({
           templateUrl: view_path+'/index.php',
           controller: 'mainController'
@@ -25,12 +30,12 @@ var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angular-loading-bar', 
 
 // Global Variables
 
-// add #home to default URL
+// add #index to default URL
 var url = document.URL,
-index = url.indexOf("#"),
-hash = index !== -1 ? url.substring(index + 1) : "";
-if (hash === "") {
- location.hash = "#index";
+index = url.indexOf('#'),
+hash = index !== -1 ? url.substring(index + 1) : '';
+if (hash === '') {
+ location.hash = '#index';
 }
 
 // to immediately collapse navbar after clicking on mobile

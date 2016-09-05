@@ -10,6 +10,7 @@
         <!-- <script src="<?php echo base_url('assets/js/clock.js'); ?>"></script> -->
         <script src="<?php echo base_url('assets/js/admin/script.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/admin/main-controller.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/admin/student-controller.js'); ?>"></script>
 
     </body>
 
