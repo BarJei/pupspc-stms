@@ -10,12 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Log In</title>
-	<!-- maxcdn bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<!-- maxcdn font awesome -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<!-- main stylesheet -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
+	
+	<link href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('node_modules/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
 
 </head>
 <body>
@@ -84,12 +82,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		?>
 	</div>
 </body>
-
-<script src="<?php echo base_url('/assets/js/jquery.js'); ?>"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+        <script src="<?php echo base_url('node_modules/jquery/dist/jquery.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/bootstrap/dist/js/bootstrap.js'); ?>"></script>
 <script>
 	$(function(){
 		$('[data-toggle="tooltip"]').tooltip();

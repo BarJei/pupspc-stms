@@ -84,7 +84,7 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
-define("API", "http://".$_SERVER['HTTP_HOST']."/ci_barjei/api/");
+define("API", "http://".$_SERVER['HTTP_HOST']."/pupspc_ams/api/");
 
 define('OK', 200);
 define('CREATED', 201);
@@ -96,4 +96,5 @@ define('NOT_FOUND', 404);
 
 define('INTERNAL_SERVER_ERROR', 500);
 
-define('TBL_ACCOUNTS', 'tbl_accounts');
+define('TBL_STAFFS', 'tbl_staffs');
+define('TBL_STUDENTS', 'tbl_students');

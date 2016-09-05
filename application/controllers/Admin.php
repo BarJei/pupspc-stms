@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller {
 	function __construct() {
 		parent::__construct();
-		$this->load->model("user_model", "user");
 		$this->load->model("admin_model", "admin");
+		$this->load->model("student_model", "student");
 	}
 
 	function index() {
@@ -13,14 +13,12 @@ class Admin extends CI_Controller {
 			redirect("login", "refresh");
 		}
 
-		$data["username"] =  $this->session->admin;
-		$data['online'] = 150;
-		$data['onlab'] = 36;
-		$data['offline'] = 88; 
+		$data["firstName"] =  $this->session->admin->firstName; 
+
+		// die('<pre>'.print_r($this->session->admin, true));
 
 		$this->load->view("admin/head");
 		$this->load->view("admin/sidebar", $data);
-		$this->load->view("admin/index");
 		$this->load->view("admin/foot");
 	}
 
@@ -30,7 +28,7 @@ class Admin extends CI_Controller {
 	}
 
 	function resetPassword() {
-		$response["response"] = $this->user->forgotPass($this->input->post());
+		$response["response"] = $this->student->forgotPass($this->input->post());
 		$status = $response["response"]->Status;
 
 		if($status == 200) {
@@ -41,6 +39,16 @@ class Admin extends CI_Controller {
 			echo '<script> alert("'.$response["response"]->Data->alert.'"); </script>';
 			$this->index();
 		}		
+	}
+
+	function createStudent() {
+
+		$data["username"] =  $this->session->admin;
+
+		$this->load->view("admin/head");
+		$this->load->view("admin/sidebar", $data);
+		$this->load->view("admin/foot");
+
 	}
 
 	// function setExpiry() {

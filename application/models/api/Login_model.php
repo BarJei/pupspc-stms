@@ -1,32 +1,28 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login_model extends CI_Model
-{
-	public function checkAccount($postData)
-	{
+class Login_model extends CI_Model {
+	public function checkAccount($postData) {
+
 		$username = $postData["username"];
 		$password = $postData["password"];
 
 		$bcryptPass = $this->bcrypt->hash_password($password);
 
-		if(empty($username) || empty($password))
-		{
+		if(empty($username) || empty($password)) {
 			return $this->bresponse->setMessage("Failed")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", "Missing input data!")
 			->getResponse();	
 		}
 
-		try
-		{
+		try {
 			$resultRow = $this->db->select("*")
-			->from(TBL_ACCOUNTS)
+			->from(TBL_STAFFS)
 			->where("username", $username)
 			->get()->result();
 
-			if(count($resultRow) == 0)
-			{
+			if(count($resultRow) == 0) {
 				return $this->bresponse->setMessage("Failed")
 				->setStatus(NOT_FOUND)
 				->addData("alert", "No user found!")
@@ -35,8 +31,8 @@ class Login_model extends CI_Model
 
 			return $response = $this->checkPassword($password, $resultRow);
 		}
-		catch(PDOException $ex)
-		{
+		catch(PDOException $ex) {
+
 			return $this->bresponse->setMessage("Error")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", "User already removed!")
@@ -45,10 +41,8 @@ class Login_model extends CI_Model
 		
 	}
 
-	public function checkPassword($password, $resultRow)
-	{		
-		if( $this->bcrypt->check_password($password, $resultRow[0]->password) )
-		{
+	public function checkPassword($password, $resultRow) {		
+		if( $this->bcrypt->check_password($password, $resultRow[0]->password) ) {
 			unset($resultRow[0]->password);
 			return $this->bresponse->setMessage("Success")
 			->setStatus(OK)

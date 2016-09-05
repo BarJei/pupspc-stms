@@ -1,26 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User_model extends CI_Model
-{
-	public function addAccount($postData)
-	{
+class Student_model extends CI_Model {
+	public function addAccount($postData) {
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = 'jpg|jpeg|png';
 		$config['encrypt_name'] = TRUE;
 
 		$this->load->library("upload", $config);
 
-		if(!$this->checkFields($postData))
-		{
+		if(!$this->checkFields($postData)) {
 			return $this->bresponse->setMessage("Failed")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", "Missing input data!")
 			->getResponse();	
 		}
 
-		if (!$this->upload->do_upload("image"))
-		{
+		if (!$this->upload->do_upload("image")) {
 			$strError = $this->upload->display_errors();
 			return $this->bresponse->setMessage("Failed")
 			->setStatus(BAD_REQUEST)
@@ -37,16 +33,14 @@ class User_model extends CI_Model
 		$birthdate = $postData["birthdate"];
 		$notes = $postData["notes"];
 
-		if($password !== $retype)
-		{
+		if($password !== $retype) {
 			return $this->bresponse->setMessage("Failed")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", "Passwords do not match!")
 			->getResponse();	
 		}
 
-		try
-		{
+		try {
 			$data = ["upload_data" => $this->upload->data()];	
 			$fileUpload = $this->upload->data(); 
 
@@ -64,11 +58,10 @@ class User_model extends CI_Model
 			"image" => $fileUpload["file_name"],
 			];
 
-			$this->db->insert(TBL_ACCOUNTS, $queryValue);
+			$this->db->insert(TBL_STUDENTS, $queryValue);
 			$insertId = $this->db->insert_id();
 
-			if($this->db->affected_rows() == 0)
-			{
+			if($this->db->affected_rows() == 0) {
 				return $this->bresponse->setMessage("Failed")
 				->setStatus(BAD_REQUEST)
 				->addData("alert", "Failed to add account!")
@@ -84,8 +77,7 @@ class User_model extends CI_Model
 			->addData($postData)
 			->getResponse();	
 		}
-		catch(PDOException $ex)
-		{
+		catch(PDOException $ex) {
 			return $this->bresponse->setMessage("Error")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", "Username or Email already in use!")
@@ -93,46 +85,36 @@ class User_model extends CI_Model
 		}
 	}
 
-	public function checkFields($postData)
-	{
-		if(empty($postData["email"]))
-		{
+	public function checkFields($postData) {
+		if(empty($postData["email"])) {
 			return false;
 		}
-		if(empty($postData["username"]))
-		{
+		if(empty($postData["username"])) {
 			return false;
 		}
-		if(empty($postData["password"]))
-		{
+		if(empty($postData["password"])) {
 			return false;
 		}
-		if(empty($postData["lastName"]))
-		{
+		if(empty($postData["lastName"])) {
 			return false;
 		}
-		if(empty($postData["firstName"]))
-		{
+		if(empty($postData["firstName"])) {
 			return false;
 		}
-		if(empty($postData["birthdate"]))
-		{
+		if(empty($postData["birthdate"])) {
 			return false;
 		}
-		if(empty($postData["notes"]))
-		{
+		if(empty($postData["notes"])) {
 			return false;
 		}
 
 		return true;
 	}
 
-	public function getAll()
-	{
-		try
-		{
+	public function getAll() {
+		try {
 			$results = $this->db->select("email, username, firstName, lastName, birthdate, notes, image")
-			->get(TBL_ACCOUNTS);
+			->get(TBL_STUDENTS);
 
 			$resultObj = $results->result();
 
@@ -142,8 +124,7 @@ class User_model extends CI_Model
 			->getResponse();	
 
 		}
-		catch(PDOException $ex)
-		{
+		catch(PDOException $ex) {
 			return $this->bresponse->setMessage("Error")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", $ex->getMessage())
@@ -152,17 +133,14 @@ class User_model extends CI_Model
 
 	}
 
-	public function verifyPassword($oldPassword, $result)
-	{
-		if( $this->bcrypt->check_password($oldPassword, $result[0]->password) )
-		{
+	public function verifyPassword($oldPassword, $result) {
+		if( $this->bcrypt->check_password($oldPassword, $result[0]->password) ) {
 			return true;
 		}
 		return false;
 	}
 
-	function sendMail($postData, $randomPassword)
-	{
+	function sendMail($postData, $randomPassword) {
 		$this->load->library('email');
 
     // FCPATH refers to the CodeIgniter install directory
@@ -195,8 +173,7 @@ class User_model extends CI_Model
 		}
 	}
 
-	function generateRandomString($length = 10) 
-	{
+	function generateRandomString($length = 10)  {
 		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$randomString = '';
 		for ($i = 0; $i < $length; $i++) {
@@ -205,37 +182,31 @@ class User_model extends CI_Model
 		return $randomString;
 	}
 
-	public function checkIfUserExists($email)
-	{
+	public function checkIfUserExists($email) {
 		$result = $this->db->select("username, email")
 		->where("email", $email)
-		->get(TBL_ACCOUNTS)->row();	
+		->get(TBL_STUDENTS)->row();	
 
-		if(empty($result))
-		{
+		if(empty($result)) {
 			return false;
 		}
 		return true;
 	}
 
-	public function changePassword($postData)
-	{
+	public function changePassword($postData) {
 		$email = $postData["email"];
 
 		$randomPassword = $this->generateRandomString();
 
-		if(empty($email) || empty($randomPassword))
-		{
+		if(empty($email) || empty($randomPassword)) {
 			return $this->bresponse->setMessage("Failed")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", "Missing input data!")
 			->getResponse();	
 		}
 
-		try
-		{
-			if(!$this->checkIfUserExists($email))
-			{
+		try {
+			if(!$this->checkIfUserExists($email)) {
 				return $this->bresponse->setMessage("Failed")
 				->setStatus(NOT_FOUND)
 				->addData("alert", "No user found!")
@@ -243,7 +214,7 @@ class User_model extends CI_Model
 			}
 
 			$result = $this->db->select("password, username")
-			->from(TBL_ACCOUNTS)
+			->from(TBL_STUDENTS)
 			->where("email", $email)
 			->get()->result();
 
@@ -255,7 +226,7 @@ class User_model extends CI_Model
 
 			$this->db->set($updateValue)
 			->where("email", $email)
-			->update(TBL_ACCOUNTS);
+			->update(TBL_STUDENTS);
 
 			$this->sendMail($postData, $randomPassword);
 
@@ -266,8 +237,7 @@ class User_model extends CI_Model
 			->getResponse();	
 
 		}
-		catch(PDOException $ex)
-		{
+		catch(PDOException $ex) {
 			return $this->bresponse->setMessage("Error")
 			->setStatus(BAD_REQUEST)
 			->addData("alert", $ex->getMessage())

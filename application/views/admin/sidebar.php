@@ -10,12 +10,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo base_url('admin'); ?>"> PUP SPC AMS </a>
+                    <a class="navbar-brand" href="<?php echo base_url('admin'); ?>"> PUPSPC AMS </a>
                 </div>
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-right top-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $username; ?> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $firstName; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -30,3 +30,67 @@
                         </ul>
                     </li>
                 </ul>
+
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <li class="active">
+      <a href="<?php echo base_url(); ?>admin#index"><i class="fa fa-fw fa-dashboard"></i> Home </a>
+    </li>
+    <li>
+      <a href="#" data-toggle="collapse" data-target="#students"><i class="fa fa-fw fa-users"></i> Students <i class="fa fa-fw fa-caret-down"></i></a>
+      <ul id="students" class="collapse">
+        <li>
+          <a href="#"> Create </a>
+        </li>
+        <li>
+          <a href="#"> View </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" data-toggle="collapse" data-target="#timelogs"><i class="fa fa-fw fa-users"></i> Time Logs <i class="fa fa-fw fa-caret-down"></i></a>
+      <ul id="timelogs" class="collapse">
+        <li>
+          <a href="#"> Guard </a>
+        </li>
+        <li>
+          <a href="#"> Laboratory </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" data-toggle="collapse" data-target="#offenses"><i class="fa fa-fw fa-users"></i> Offenses <i class="fa fa-fw fa-caret-down"></i></a>
+      <ul id="offenses" class="collapse">
+        <li>
+          <a href="#"> Create </a>
+        </li>
+        <li>
+          <a href="#"> View </a>
+        </li>
+      </ul>
+    </li>
+    
+  </ul>
+</div>
+<!-- /.navbar-collapse -->
+
+</nav>
+
+    <div id="page-wrapper">
+
+            <div class="container-fluid"> 
+
+                <div id="main">
+
+                    <!-- angular route view -->
+                    <div ng-view>
+
+                    </div>
+
+                  </div>
+                
+            </div>
+            <!-- /.container fluid -->
+        </div>
+        <!-- /.page wrapper -->

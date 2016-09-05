@@ -1,21 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller
-{
-	function __construct()
-	{
+class Student extends CI_Controller {
+
+	function __construct() {
 		parent::__construct();
-		$this->load->model("user_model", "user");	
+		$this->load->model("student_model", "student");	
 	}
 
-	function index()
-	{
+	function index() {
 		$this->add();
 	}
 
-	function checkSession()
-	{
+	function checkSession() {
 		if(empty($this->session->user))
 		{
 			return false;
@@ -23,16 +20,13 @@ class User extends CI_Controller
 		return true;
 	}
 
-	function logOut()
-	{
+	function logOut() {
 		$this->session->unset_userdata("user");
 		redirect("login", "refresh");
 	}
 
-	function add()
-	{
-		if(!$this->checkSession())
-		{
+	function add() {
+		if(!$this->checkSession()) {
 			redirect("login", "refresh");	
 		}
 
@@ -43,26 +37,21 @@ class User extends CI_Controller
 		$this->load->view("user/foot");
 	}
 
-	function addAccount()
-	{
+	function addAccount() {
 		$response["response"] = $this->user->addAccount($this->input->post());
 		$status = $response["response"]->Status;
 		echo '<script> alert("'.$response["response"]->Data->alert.'"); </script>';
 
-		if($status == 400)
-		{
+		if($status == 400) {
 			$this->add();
 		}
-		elseif($status == 201)
-		{
+		elseif($status == 201) {
 			$this->view();	
 		}
 	}
 
-	function view()
-	{	
-		if(!$this->checkSession())
-		{
+	function view() {	
+		if(!$this->checkSession()) {
 			redirect("login", "refresh");	
 		}
 
@@ -74,23 +63,19 @@ class User extends CI_Controller
 		$this->load->view("user/foot");	
 	}
 
-	function forgotPassword()
-	{
+	function forgotPassword() {
 		$this->load->view("forgot_password");
 	}
 
-	function sendEmail()
-	{
+	function sendEmail() {
 		$response["response"] = $this->user->forgotPass($this->input->post());
 		$status = $response["response"]->Status;
 
-		if($status == 200)
-		{
+		if($status == 200) {
 			echo '<script> alert("'.$response["response"]->Data->alert.'"); </script>';
 			$this->forgotPassword();
 		}
-		elseif($status == 400)
-		{
+		elseif($status == 400) {
 			echo '<script> alert("'.$response["response"]->Data->alert.'"); </script>';
 			$this->forgotPassword();
 		}		

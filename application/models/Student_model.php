@@ -3,10 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use \Curl\Curl;
 
-class User_model extends CI_Model
-{
-	function addAccount($postData)
-	{
+class Student_model extends CI_Model {
+	function addAccount($postData) {
 		$image = new CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name']);
 
 		$postSend = [
@@ -31,8 +29,7 @@ class User_model extends CI_Model
 		return $response;	
 	}
 
-	function getAccounts()
-	{
+	function getAccounts() {
 		$curl = new Curl();
 		$curl->get(API."user/view");
 		$curl->close();
@@ -41,8 +38,7 @@ class User_model extends CI_Model
 		return $response;
 	}
 
-	function forgotPass($postData)
-	{
+	function forgotPass($postData) {
 		$postSend = [
 		"email" => $postData["email"]
 		];

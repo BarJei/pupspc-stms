@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 
@@ -14,18 +14,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <title> PUPSPC CMS</title>
 
-    <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap.css'); ?>" rel="stylesheet">
-
-    <!-- main stylesheet -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
-
     <link rel="stylesheet" href="<?php echo base_url('assets/css/sb-admin.css'); ?>">
-
-    <!-- jQuery UI -->
+    <link rel="stylesheet" href="<?php echo base_url('node_modules/angular-loading-bar/build/loading-bar.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('node_modules/jquery-ui/themes/smoothness/jquery-ui.css'); ?>">
-
-    <!-- maxcdn font awesome -->
     <link href="<?php echo base_url('node_modules/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
     
 </head>
