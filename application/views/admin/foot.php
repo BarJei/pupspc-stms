@@ -1,14 +1,19 @@
         <!-- jQuery -->
-        <script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
 
         <!-- jei-query -->
-        <script src="<?php echo base_url('assets/js/jei-query.js'); ?>"></script>
 
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="<?php echo base_url('node_modules/jquery/dist/jquery.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/bootstrap/dist/js/bootstrap.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular/angular.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular-route/angular-route.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular-animate/angular-animate.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular-loading-bar/build/loading-bar.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular-sanitize/angular-sanitize.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular-strap/dist/angular-strap.js'); ?>"></script>
+        <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+        <script src="<?php echo base_url('assets/js/clock.js'); ?>"></script>
 
     </body>
 
