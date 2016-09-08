@@ -6,11 +6,13 @@
         <script src="<?php echo base_url('node_modules/angular-loading-bar/build/loading-bar.js'); ?>"></script>
         <script src="<?php echo base_url('node_modules/angular-sanitize/angular-sanitize.js'); ?>"></script>
         <script src="<?php echo base_url('node_modules/angular-strap/dist/angular-strap.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular-strap/dist/angular-strap.tpl.js'); ?>"></script>
         <!-- <script src="<?php echo base_url('node_modules/jquery-ui/jquery-ui.js'); ?>"></script> -->
         <!-- <script src="<?php echo base_url('assets/js/clock.js'); ?>"></script> -->
         <script src="<?php echo base_url('assets/js/admin/script.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/admin/main-controller.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/admin/student-controller.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/admin/staff-controller.js'); ?>"></script>
 
     </body>
 

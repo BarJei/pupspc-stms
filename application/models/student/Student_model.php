@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 use \Curl\Curl;
 
 class Student_model extends CI_Model {
+	
 	function addAccount($postData) {
 		$image = new CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name']);
 

@@ -16,6 +16,11 @@ var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angular-loading-bar', 
       controller: 'studentCreateController'
     })
 
+     .when('/create-staff', {
+      templateUrl: view_path + '/staff-create.php',
+      controller: 'staffCreateController'
+    })
+
      .otherwise({
           templateUrl: view_path+'/index.php',
           controller: 'mainController'

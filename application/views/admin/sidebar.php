@@ -44,7 +44,18 @@
                           <a href="#create-student"> Create </a>
                         </li>
                         <li>
-                          <a href="#students"> View </a>
+                          <a href="#view-students"> View </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" data-toggle="collapse" data-target="#staffs"><i class="fa fa-fw fa-user"></i> Staffs <i class="fa fa-fw fa-caret-down"></i></a>
+                      <ul id="staffs" class="collapse">
+                        <li>
+                          <a href="#create-staff"> Create </a>
+                        </li>
+                        <li>
+                          <a href="#view-staffs"> View </a>
                         </li>
                       </ul>
                     </li>
@@ -66,7 +77,7 @@
                           <a href="#create-offense"> Create </a>
                         </li>
                         <li>
-                          <a href="#offenses"> View </a>
+                          <a href="#view-offenses"> View </a>
                         </li>
                       </ul>
                     </li>

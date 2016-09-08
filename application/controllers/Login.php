@@ -62,9 +62,14 @@ class Login extends CI_Controller {
 				}
 
 				else {
-				$this->session->set_userdata("user", $userData->username);
-				redirect("user", "refresh");
+					redirect('login');
 				}
+
+				// elseif($userData->isAdmin == 0){
+				// 	// $this->session->unset_userdata("user"); 
+				// 	redirect("guard/guard", "refresh");
+				// 	$this->session->set_userdata("guard", $userData);
+				// }
 			}	
 		}
 	}

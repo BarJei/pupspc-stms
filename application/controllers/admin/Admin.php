@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller {
 	function __construct() {
 		parent::__construct();
-		$this->load->model("admin_model", "admin");
-		$this->load->model("student_model", "student");
+		$this->load->model("admin/admin_model", "admin");
+		$this->load->model("student/student_model", "student");
 	}
 
 	function index() {
@@ -14,8 +14,6 @@ class Admin extends CI_Controller {
 		}
 
 		$data["firstName"] =  $this->session->admin->firstName; 
-
-		// die('<pre>'.print_r($this->session->admin, true));
 
 		$this->load->view("admin/head");
 		$this->load->view("admin/sidebar", $data);
@@ -43,12 +41,11 @@ class Admin extends CI_Controller {
 
 	function createStudent() {
 
-		$data["username"] =  $this->session->admin;
+	}
 
-		$this->load->view("admin/head");
-		$this->load->view("admin/sidebar", $data);
-		$this->load->view("admin/foot");
-
+	function createStaff() {
+		$result = $this->admin->createStaff($this->input->post());
+		echo $result;
 	}
 
 	// function setExpiry() {

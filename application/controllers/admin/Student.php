@@ -5,7 +5,7 @@ class Student extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model("student_model", "student");	
+		$this->load->model("student/student_model", "student");	
 	}
 
 	function index() {
