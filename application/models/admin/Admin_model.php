@@ -32,4 +32,16 @@ class Admin_model extends CI_Model {
 
 	}
 
+	function getAllStaffs() {
+
+		$query = $this->db->select()
+		->where("isDeleted", 0)
+		->get(TBL_STAFFS);
+
+		$result = $query->result();
+		
+		return $result;
+
+	}
+
 }

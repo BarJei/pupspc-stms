@@ -1,3 +1,24 @@
+app.controller('staffController', function ($http, $scope, cfpLoadingBar) {
+	cfpLoadingBar.start();
+
+	$scope.header = 'Staffs';
+
+	getAllStaffs();
+
+	function getAllStaffs() {
+		$http.get(base_url + 'admin/admin/viewAllStaffs/', {
+			params: {}
+		}).success(function(data) {
+			// console.log(data);
+			$scope.allStaffs = data;
+		}).error(function(data) {
+			console.log(data);
+		});
+	}
+
+	cfpLoadingBar.complete();
+});
+
 app.controller('staffCreateController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.start();
 

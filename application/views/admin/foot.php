@@ -1,6 +1,8 @@
         <script src="<?php echo base_url('node_modules/jquery/dist/jquery.js'); ?>"></script>
         <script src="<?php echo base_url('node_modules/bootstrap/dist/js/bootstrap.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/datatables.net/js/jquery.dataTables.js'); ?>"></script>
         <script src="<?php echo base_url('node_modules/angular/angular.js'); ?>"></script>
+        <script src="<?php echo base_url('node_modules/angular-datatables/dist/angular-datatables.js'); ?>"></script>
         <script src="<?php echo base_url('node_modules/angular-route/angular-route.js'); ?>"></script>
         <script src="<?php echo base_url('node_modules/angular-animate/angular-animate.js'); ?>"></script>
         <script src="<?php echo base_url('node_modules/angular-loading-bar/build/loading-bar.js'); ?>"></script>

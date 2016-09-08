@@ -48,6 +48,14 @@ class Admin extends CI_Controller {
 		echo $result;
 	}
 
+	function viewAllStaffs() {
+		$result = $this->admin->getAllStaffs();	
+
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+		
+	}
+
 	// function setExpiry() {
 	// 	$response["response"] = $this->admin->setExpiry($this->input->post());
 	// 	$status = $response["response"]->Status;

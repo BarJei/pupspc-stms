@@ -1,5 +1,12 @@
 // Angular module
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angular-loading-bar', 'ngSanitize', 'mgcrea.ngStrap']);
+var app = angular.module('app', [
+  'ngRoute', 
+  'ngAnimate', 
+  'angular-loading-bar', 
+  'ngSanitize', 
+  'mgcrea.ngStrap', 
+  'datatables'
+  ]);
 
      // Routes
      app.config(function ($routeProvider) {
@@ -19,6 +26,11 @@ var app = angular.module('app', ['ngRoute', 'ngAnimate', 'angular-loading-bar', 
      .when('/create-staff', {
       templateUrl: view_path + '/staff-create.php',
       controller: 'staffCreateController'
+    })
+
+     .when('/view-staffs', {
+      templateUrl: view_path + '/staffs.php',
+      controller: 'staffController'
     })
 
      .otherwise({
