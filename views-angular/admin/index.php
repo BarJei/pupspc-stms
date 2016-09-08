@@ -40,7 +40,7 @@
        <i class="fa fa-spoon fa-5x"></i>
      </div>
      <div class="col-xs-9 text-right">
-       <div class="huge"> 136 </div>
+       <div class="huge"> 36 </div>
        <div> On Lab. Students </div>
      </div>
    </div>

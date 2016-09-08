@@ -5,7 +5,8 @@ var app = angular.module('app', [
   'angular-loading-bar', 
   'ngSanitize', 
   'mgcrea.ngStrap', 
-  'datatables'
+  'datatables',
+  'datatables.bootstrap'
   ]);
 
      // Routes

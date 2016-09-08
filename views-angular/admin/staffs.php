@@ -8,13 +8,14 @@
   </ol>
 
   <div>
-    <table datatable="ng" class="table table-hover">
+    <table datatable="ng" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
         <thead>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>Username</th>
+            <th>Role</th>
         </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
             <td>{{ staffData.lastName }}</td>
             <td>{{ staffData.email }}</td>
             <td>{{ staffData.username }}</td>
+            <td>{{ staffData.isAdmin == 1 ? 'Admin' : 'Guard' }}</td>
         </tr>
         </tbody>
     </table>
