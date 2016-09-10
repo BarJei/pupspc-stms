@@ -3,11 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Student_model extends CI_Model {
 	public function addAccount($postData) {
-		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'jpg|jpeg|png';
-		$config['encrypt_name'] = TRUE;
+		// $config['upload_path'] = './uploads/';
+		// $config['allowed_types'] = 'jpg|jpeg|png';
+		// $config['encrypt_name'] = TRUE;
 
-		$this->load->library("upload", $config);
+		// $this->load->library("upload", $config);
 
 		if(!$this->checkFields($postData)) {
 			return $this->bresponse->setMessage("Failed")
@@ -16,13 +16,15 @@ class Student_model extends CI_Model {
 			->getResponse();	
 		}
 
-		if (!$this->upload->do_upload("image")) {
-			$strError = $this->upload->display_errors();
-			return $this->bresponse->setMessage("Failed")
-			->setStatus(BAD_REQUEST)
-			->addData("alert", strip_tags($strError))
-			->getResponse();
-		}
+		// archived, since no photo upload function atm
+
+		// if (!$this->upload->do_upload("image")) {
+		// 	$strError = $this->upload->display_errors();
+		// 	return $this->bresponse->setMessage("Failed")
+		// 	->setStatus(BAD_REQUEST)
+		// 	->addData("alert", strip_tags($strError))
+		// 	->getResponse();
+		// }
 
 		$email = $postData["email"];
 		$username = $postData["username"];

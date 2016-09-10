@@ -8,7 +8,7 @@ class Admin_model extends CI_Model {
 		$bcryptPass = $this->bcrypt->hash_password($postData["password"]);
 
 		$insertData = [
-			"isAdmin" => $postData["isAdmin"],
+			"userType" => $postData["userType"],
 			"email" => $postData["email"],
 			"username" => $postData["username"],
 			"password" => $bcryptPass,

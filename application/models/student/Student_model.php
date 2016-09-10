@@ -6,18 +6,16 @@ use \Curl\Curl;
 class Student_model extends CI_Model {
 	
 	function addAccount($postData) {
-		$image = new CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name']);
+		// $image = new CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name']);
 
 		$postSend = [
 		"email" => $postData["email"],
 		"username" => $postData["username"],
 		"password" => $postData["password"],
-		"retype" => $postData["retype"],
 		"firstName" => $postData["firstName"],
 		"lastName" => $postData["lastName"],
 		"birthdate" => $postData["birthdate"],
-		"notes" => $postData["notes"],
-		"image" => $image
+		// "image" => $image
 		];
 
 		$curl = new Curl();

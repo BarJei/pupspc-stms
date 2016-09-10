@@ -13,8 +13,7 @@ class Student extends CI_Controller {
 	}
 
 	function checkSession() {
-		if(empty($this->session->user))
-		{
+		if(empty($this->session->user)) {
 			return false;
 		}
 		return true;

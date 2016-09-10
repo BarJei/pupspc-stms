@@ -1,11 +1,16 @@
 app.controller('staffController', function ($http, $scope, cfpLoadingBar) {
+	// start loading bar
 	cfpLoadingBar.start();
 
+	// set header of page
 	$scope.header = 'Staffs';
 
 	getAllStaffs();
 
+	// get staffs
 	function getAllStaffs() {
+
+		// http get method
 		$http.get(base_url + 'admin/admin/viewAllStaffs/', {
 			params: {}
 		}).success(function(data) {
@@ -16,33 +21,55 @@ app.controller('staffController', function ($http, $scope, cfpLoadingBar) {
 		});
 	}
 
+	// complete loading bar
 	cfpLoadingBar.complete();
 });
 
 app.controller('staffCreateController', function ($http, $scope, cfpLoadingBar) {
+	// start loading bar
 	cfpLoadingBar.start();
 
-	var assetsImages = base_url+'/assets/images/';
-	$scope.source = assetsImages;
+	// var assetsImages = base_url+'/assets/images/';
+	// $scope.source = assetsImages;
 
+	// set page header
 	$scope.header = 'Staffs';
 
+	// selected staff type default
 	$scope.selectedType = '';
 
+	// staff type options
 	$scope.staffType = [{
-		value: 0,
+		value: 2,
 		label: 'Guard'
 	}, {
 		value: 1,
 		label: 'Administrator'
 	}];
 
+	// complete loading bar
 	cfpLoadingBar.complete();
 
+	// submit create staff
 	$scope.submitAdd = function() {
 
+		var password = $scope.password,
+		retypePassword = $scope.retypePassword;
+
+		var userType = $scope.selectedType;
+
+		if(password !== retypePassword) {
+			alert('Passwords do not match, try again.');
+			return;
+		}
+
+		if(userType == '') {
+			alert('Please specify role');
+			return;
+		}
+
 		var params = {
-			isAdmin: $scope.selectedType,
+			userType: userType,
 			email: $scope.email,
 			username: $scope.username,
 			firstName: $scope.firstName,
@@ -50,6 +77,7 @@ app.controller('staffCreateController', function ($http, $scope, cfpLoadingBar) 
 			password: $scope.password
 		};
 
+		// http post method to submit form data
 		$http({
           method  : 'POST',
           url     : base_url+'admin/admin/createStaff/',
@@ -71,9 +99,6 @@ app.controller('staffCreateController', function ($http, $scope, cfpLoadingBar) 
      }).error(function(data) {
      	console.log(data);
      });
-
-
-
 
 	}
 	
