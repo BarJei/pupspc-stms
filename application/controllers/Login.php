@@ -56,7 +56,7 @@ class Login extends CI_Controller {
 
 				// die('<pre>'.print_r($userSession, true));
 
-				if($userData->isAdmin == 1) {
+				if($userData->userType == 1) {
 					$this->session->set_userdata("admin", $userData);
 					redirect("admin/admin", "refresh");
 				}
