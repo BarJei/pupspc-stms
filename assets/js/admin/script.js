@@ -19,11 +19,6 @@ var app = angular.module('app', [
       controller: 'mainController'
     })
 
-     .when('/create-student', {
-      templateUrl: view_path + '/student-create.php',
-      controller: 'studentCreateController'
-    })
-
      .when('/create-staff', {
       templateUrl: view_path + '/staff-create.php',
       controller: 'staffCreateController'
@@ -32,6 +27,11 @@ var app = angular.module('app', [
      .when('/view-staffs', {
       templateUrl: view_path + '/staffs.php',
       controller: 'staffController'
+    })
+
+     .when('/create-student', {
+      templateUrl: view_path + '/student-create.php',
+      controller: 'studentCreateController'
     })
 
      .otherwise({

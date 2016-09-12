@@ -18,7 +18,7 @@
               </label>
             </div>
             <div class="col-md-6">
-                <input type="email" class="form-control thin-font" name="email" id="email" ng-model="email" required>
+                <input type="email" class="form-control thin-font" name="email" id="email" ng-model="email" required autofocus="">
             </div>
         </div>
         <br>

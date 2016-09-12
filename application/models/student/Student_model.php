@@ -9,18 +9,21 @@ class Student_model extends CI_Model {
 		// $image = new CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name']);
 
 		$postSend = [
+		"rfid" => $postData["rfid"],
 		"email" => $postData["email"],
 		"username" => $postData["username"],
 		"password" => $postData["password"],
+		"retype" => $postData["retype"],
 		"firstName" => $postData["firstName"],
 		"lastName" => $postData["lastName"],
-		"birthdate" => $postData["birthdate"],
+		// "birthdate" => $postData["birthdate"],
+		"userType" => $postData["userType"]
 		// "image" => $image
 		];
 
 		$curl = new Curl();
 		// $curl->setHeader("Content-Type","form-data");
-		$curl->post(API."user/add/", $postSend);
+		$curl->post(API."student/add/", $postSend);
 		$curl->close();
 
 		// die('<pre>'.print_r($curl, true));
@@ -30,7 +33,7 @@ class Student_model extends CI_Model {
 
 	function getAccounts() {
 		$curl = new Curl();
-		$curl->get(API."user/view");
+		$curl->get(API."student/view");
 		$curl->close();
 
 		$response = $curl->response;
@@ -43,7 +46,7 @@ class Student_model extends CI_Model {
 		];
 
 		$curl = new Curl();
-		$curl->post(API."user/forgotPassword/", $postSend);
+		$curl->post(API."student/forgotPassword/", $postSend);
 		$curl->close();
 
 		$response = $curl->response;

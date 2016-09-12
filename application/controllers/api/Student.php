@@ -7,11 +7,11 @@ require APPPATH . '/libraries/REST_Controller.php';
 class Student extends REST_Controller {
 	public function __construct() {
 		parent::__construct();
-		$this->load->model("api/student", "student");
+		$this->load->model("api/student_model", "student");
 	}
 
 	public function add_post() {
-		$response = $this->student->addAccount( $this->post() );
+		$response = $this->student->addAccount($this->post());
 		$this->response($response, OK);
 	}
 

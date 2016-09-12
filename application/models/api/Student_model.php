@@ -26,14 +26,16 @@ class Student_model extends CI_Model {
 		// 	->getResponse();
 		// }
 
+		$rfid = $postData["rfid"];
 		$email = $postData["email"];
 		$username = $postData["username"];
 		$password = $postData["password"];
 		$retype = $postData["retype"];
 		$firstName = $postData["firstName"];
 		$lastName = $postData["lastName"];
-		$birthdate = $postData["birthdate"];
-		$notes = $postData["notes"];
+		$userType = $postData["userType"];
+		// $birthdate = $postData["birthdate"];
+		// $notes = $postData["notes"];
 
 		if($password !== $retype) {
 			return $this->bresponse->setMessage("Failed")
@@ -43,21 +45,23 @@ class Student_model extends CI_Model {
 		}
 
 		try {
-			$data = ["upload_data" => $this->upload->data()];	
-			$fileUpload = $this->upload->data(); 
+			// $data = ["upload_data" => $this->upload->data()];	
+			// $fileUpload = $this->upload->data(); 
 
 			$bcryptPass = $this->bcrypt->hash_password($password);
 
 			$queryValue = [
+			"rfid" => $rfid,
 			"email" => $email,
 			"username" => $username,
 			"password" => $bcryptPass,
 			"firstName" => ucwords($firstName),
 			"lastName" => ucwords($lastName),
-			"birthdate" => date("Y-m-d", strtotime($birthdate)),
-			"notes" => $notes,
-			"dateCreated" => date("Y-m-d H:i:s"),
-			"image" => $fileUpload["file_name"],
+			"userType" => $userType,
+			// "birthdate" => date("Y-m-d", strtotime($birthdate)),
+			// "notes" => $notes,
+			"dateCreated" => date("Y-m-d H:i:s")
+			// "image" => $fileUpload["file_name"],
 			];
 
 			$this->db->insert(TBL_STUDENTS, $queryValue);
@@ -66,7 +70,7 @@ class Student_model extends CI_Model {
 			if($this->db->affected_rows() == 0) {
 				return $this->bresponse->setMessage("Failed")
 				->setStatus(BAD_REQUEST)
-				->addData("alert", "Failed to add account!")
+				->addData("alert", "Failed to create account!")
 				->getResponse();	
 			}
 
@@ -75,19 +79,23 @@ class Student_model extends CI_Model {
 
 			return $this->bresponse->setMessage("Success")
 			->setStatus(CREATED)
-			->addData("alert", "Account successfully added.")
+			->addData("alert", "Account successfully created.")
 			->addData($postData)
 			->getResponse();	
 		}
 		catch(PDOException $ex) {
 			return $this->bresponse->setMessage("Error")
 			->setStatus(BAD_REQUEST)
+			// ->addData("alert", $ex->getMessage())
 			->addData("alert", "Username or Email already in use!")
 			->getResponse();	
 		}
 	}
 
 	public function checkFields($postData) {
+		if(empty($postData["rfid"])) {
+			return false;
+		}
 		if(empty($postData["email"])) {
 			return false;
 		}
@@ -103,19 +111,22 @@ class Student_model extends CI_Model {
 		if(empty($postData["firstName"])) {
 			return false;
 		}
-		if(empty($postData["birthdate"])) {
-			return false;
-		}
-		if(empty($postData["notes"])) {
-			return false;
-		}
+		// if(empty($postData["userType"])) {
+		// 	return false;
+		// }
+		// if(empty($postData["birthdate"])) {
+		// 	return false;
+		// }
+		// if(empty($postData["notes"])) {
+		// 	return false;
+		// }
 
 		return true;
 	}
 
 	public function getAll() {
 		try {
-			$results = $this->db->select("email, username, firstName, lastName, birthdate, notes, image")
+			$results = $this->db->select("rfid, email, username, firstName, lastName, userType")
 			->get(TBL_STUDENTS);
 
 			$resultObj = $results->result();

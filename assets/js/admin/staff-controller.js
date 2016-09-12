@@ -40,11 +40,11 @@ app.controller('staffCreateController', function ($http, $scope, cfpLoadingBar) 
 
 	// staff type options
 	$scope.staffType = [{
-		value: 2,
-		label: 'Guard'
-	}, {
 		value: 1,
 		label: 'Administrator'
+	}, {
+		value: 2,
+		label: 'Guard'
 	}];
 
 	// complete loading bar

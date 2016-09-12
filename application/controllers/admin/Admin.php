@@ -40,7 +40,11 @@ class Admin extends CI_Controller {
 	}
 
 	function createStudent() {
+		$response["response"] = $this->student->addAccount($this->input->post());
+		$status = $response["response"]->Status;
 
+		$json["json"] = $status;
+		$this->load->view("response/json_data", $json);
 	}
 
 	function createStaff() {
@@ -53,7 +57,6 @@ class Admin extends CI_Controller {
 
 		$json["json"] = $result;
 		$this->load->view("response/json_data", $json);
-		
 	}
 
 	// function setExpiry() {
