@@ -2,12 +2,12 @@
 date_default_timezone_set("Asia/Manila");
 ?> 
 <ol class="breadcrumb">
-    <li class="active">
-      <i class="fa fa-user"></i> {{ header }}     </li>
-      <li class="active">
-          <i class="fa fa-user-plus"></i> <a href="admin#create-staff"> Create </a>
-
-      </li>
+  <li class="active">
+    <i class="fa fa-user"></i> {{ header }}     
+  </li>
+  <li>
+    <i class="fa fa-user-plus"></i> <a href="#create-staff"> Create </a>
+  </li>
   </ol>
 
   <!-- row -->

@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Manila");
 ?> 
 <ol class="breadcrumb">
   <li>
-    <i class="fa fa-users"></i><a href="admin#view-students"> {{ header }} </a>
+    <i class="fa fa-users"></i><a href="#view-students"> {{ header }} </a>
   </li>
   <li class="active">
     <i class="fa fa-user-plus"></i> Create
@@ -162,15 +162,9 @@ date_default_timezone_set("Asia/Manila");
         <input type="text" class="form-control thin-font" name="rfid" id="rfid" ng-model="newUser.rfid" placeholder="Swipe RFID Card..." required>
       </div>
     </div>
-    <br>
     <!-- /.row -->
 
-    <div class="row form-group" id="div-createstudent">
-      <div class="col-md-2">
-        <input type="submit" class="btn btn-primary btn-sm" value="Create">
-      </div>        
-    </div>
-    <!-- /.row -->
+    <input type="submit" class="display-none">
 
   </fieldset>
 

@@ -98,3 +98,5 @@ define('INTERNAL_SERVER_ERROR', 500);
 
 define('TBL_STAFFS', 'tbl_staffs');
 define('TBL_STUDENTS', 'tbl_students');
+define('TBL_LOGS', 'tbl_timelogs');
+define('TBL_LOGS_LAB', 'tbl_timelogs_lab');

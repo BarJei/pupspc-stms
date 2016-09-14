@@ -181,7 +181,16 @@ span.user-info > p
 
 }
 
-#div-createstudent
+.btn-primary
+
+{
+
+    background-color: #7e0e09;
+    border-color: #7e0e09;
+
+}
+
+.display-none 
 
 {
 

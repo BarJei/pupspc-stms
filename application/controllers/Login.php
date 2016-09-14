@@ -54,15 +54,16 @@ class Login extends CI_Controller {
 
 				$userData = $response["response"]->Data->userData;
 
-				// die('<pre>'.print_r($userSession, true));
+				// die('<pre>'.print_r($userData, true));
 
 				if($userData->userType == 1) {
 					$this->session->set_userdata("admin", $userData);
 					redirect("admin/admin", "refresh");
 				}
 
-				else {
-					redirect('login');
+				elseif($userData->userType == 2){
+					$this->session->set_userdata("guard", $userData);
+					redirect('guard/guard', 'refresh');
 				}
 
 				// elseif($userData->isAdmin == 0){

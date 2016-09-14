@@ -131,25 +131,25 @@ app.controller('studentCreateController', function ($http, $scope, cfpLoadingBar
 
 		// http post method to submit form data
 		$http({
-          method  : 'POST',
-          url     : base_url + 'admin/admin/createStudent/',
-          data    : $.param(params), 
-          headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
+			method  : 'POST',
+			url     : base_url + 'admin/admin/createStudent/',
+			data    : $.param(params), 
+			headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
 
-     }).success(function(data) {
-     	console.log(data);
+		}).success(function(data) {
+			console.log(data);
 
-     	if(data == 1) {
-     		alert('Account successfully created!');
-     		window.location.reload();
-     	}
-     	else {
-     		alert('Error creating account! Please try again.');
-     	}
+			if(data == 1) {
+				alert('Account successfully created!');
+				window.location.reload();
+			}
+			else {
+				alert('Error creating account! Please try again.');
+			}
 
-     }).error(function(data) {
-     	console.log(data);
-     });
+		}).error(function(data) {
+			console.log(data);
+		});
 
 	}
 

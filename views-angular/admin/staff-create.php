@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Manila");
 ?> 
    <ol class="breadcrumb">
     <li>
-      <i class="fa fa-user"></i><a href="admin#view-staffs"> {{ header }} </a>
+      <i class="fa fa-user"></i><a href="#view-staffs"> {{ header }} </a>
     </li>
     <li class="active">
       <i class="fa fa-user-plus"></i> Create

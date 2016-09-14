@@ -2,12 +2,12 @@
 date_default_timezone_set("Asia/Manila");
 ?> 
 <ol class="breadcrumb">
-  <li class="active">
-    <i class="fa fa-user"></i> {{ header }} 
-  </li>
-  <li>
-    <i class="fa fa-user-plus"></i> <a href="#create-student"> Create </a>
-  </li>
+    <li class="active">
+      <i class="fa fa-user"></i> {{ header }} 
+    </li>
+      <li>
+          <i class="fa fa-clock-o"></i> <a href="#timelog"> Time Log </a>
+      </li>
   </ol>
 
   <div class="row">

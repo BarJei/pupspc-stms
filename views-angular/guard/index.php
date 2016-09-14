@@ -2,7 +2,7 @@
 date_default_timezone_set("Asia/Manila");
 ?> 
 <ol class="breadcrumb">
-  <li>
+  <li class="active">
     <i class="fa fa-home"></i> {{ header }} 
   </li>
 </ol>
@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Manila");
 
   <div class="col-md-6">
    <h1 class="page-header">
-    Admin <small></small>
+    Guard <small></small>
   </h1>
 </div>
 <div class="col-md-6">

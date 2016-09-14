@@ -22,7 +22,7 @@ class Admin extends CI_Controller {
 
 	function logOut() {
 		$this->session->unset_userdata("admin");
-		redirect("login");
+		redirect("login", "refresh");
 	}
 
 	function resetPassword() {
