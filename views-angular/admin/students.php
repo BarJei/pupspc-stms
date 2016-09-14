@@ -22,9 +22,9 @@
         <tr ng-repeat="studentData in students">
             <td>{{ studentData.studNo }}</td>
             <td>{{ studentData.firstName }}</td>
-            <td>{{ studentData.middleName }}</td>
+            <td>{{ studentData.middleName == '' ? 'N/A' : studentData.middleName }}</td>
             <td>{{ studentData.lastName }}</td>
-            <td>{{ studentData.userType == 1 ? 'LMG' : 'SA' }}</td>
+            <td>{{ studentData.userType == 1 ? 'L.M.G.' : 'S.A.' }}</td>
         </tr>
         </tbody>
     </table>
