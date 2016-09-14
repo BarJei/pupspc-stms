@@ -1,4 +1,6 @@
-   <!-- Page Heading -->
+<?php
+date_default_timezone_set("Asia/Manila");
+?> 
    <ol class="breadcrumb">
     <li>
       <i class="fa fa-user"></i><a href="admin#view-staffs"> {{ header }} </a>
@@ -7,6 +9,34 @@
       <i class="fa fa-user-plus"></i> Create
     </li>
   </ol>
+
+  <!-- row -->
+  <div class="row">
+    <div class="col-md-6">
+     <h1 class="page-header">
+     {{ header }} <small></small>
+    </h1>
+  </div>
+  <div class="col-md-6">
+   <div>
+    <div class="panel-heading">
+     <div class="row">
+      <div class="col-xs-3">
+       <i class=""></i>
+     </div>
+     <div class="col-xs-9 text-right">
+      <div class="huge">
+       <span id="clock">&nbsp</span>
+     </div>
+     <div><?php echo date("D, j M Y"); ?></div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+<!-- clock -->
+</div>
+<!-- ./row -->
 
   <form ng-submit="submitAdd()">
   <fieldset>
