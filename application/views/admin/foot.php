@@ -24,7 +24,7 @@
 
         <!-- <script src="<?php echo base_url('node_modules/jquery-ui/jquery-ui.js'); ?>"></script> -->
 
-        <!-- <script src="<?php echo base_url('assets/js/clock.js'); ?>"></script> -->
+        <script src="<?php echo base_url('assets/js/clock.js'); ?>"></script>
 
         <script src="<?php echo base_url('assets/js/admin/script.js'); ?>"></script>
        
