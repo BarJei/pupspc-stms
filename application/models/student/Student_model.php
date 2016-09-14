@@ -6,51 +6,47 @@ use \Curl\Curl;
 class Student_model extends CI_Model {
 	
 	function addAccount($postData) {
-		// $image = new CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name']);
 
-		$postSend = [
-		"rfid" => $postData["rfid"],
-		"email" => $postData["email"],
-		"username" => $postData["username"],
-		"password" => $postData["password"],
-		"retype" => $postData["retype"],
-		"firstName" => $postData["firstName"],
-		"lastName" => $postData["lastName"],
-		// "birthdate" => $postData["birthdate"],
-		"userType" => $postData["userType"]
-		// "image" => $image
-		];
+		try {
+			$queryValue = [
+			"studNo" => $postData['studNo'],
+			"firstName" => ucwords($postData['firstName']),
+			"middleName" => ucwords($postData['middleName']),
+			"lastName" => ucwords($postData['lastName']),
+			"userType" => $postData['userType'],
+			"course" => $postData["course"],
+			"yearLevel" => $postData["yearLevel"],
+			"rfid" => $postData['rfid'],
+			// "birthdate" => date("Y-m-d", strtotime($birthdate)),
+			"dateCreated" => date("Y-m-d H:i:s")
+			// "image" => $fileUpload["file_name"],
+			];
 
-		$curl = new Curl();
-		// $curl->setHeader("Content-Type","form-data");
-		$curl->post(API."student/add/", $postSend);
-		$curl->close();
+			$this->db->insert(TBL_STUDENTS, $queryValue);
+			$insertId = $this->db->insert_id();
 
-		// die('<pre>'.print_r($curl, true));
-		$response = $curl->response;
-		return $response;	
+			if($this->db->affected_rows() == 0) {
+				return 0;
+			}
+
+			return  1;
+		}
+		catch(PDOException $ex) {
+			return $ex->getMessage();
+		}
+	
 	}
 
-	function getAccounts() {
-		$curl = new Curl();
-		$curl->get(API."student/view");
-		$curl->close();
+	function getAllStudents() {
 
-		$response = $curl->response;
-		return $response;
-	}
+		$query = $this->db->select()
+		->where("isDeleted", 0)
+		->get(TBL_STUDENTS);
 
-	function forgotPass($postData) {
-		$postSend = [
-		"email" => $postData["email"]
-		];
+		$result = $query->result();
+		
+		return $result;
 
-		$curl = new Curl();
-		$curl->post(API."student/forgotPassword/", $postSend);
-		$curl->close();
-
-		$response = $curl->response;
-		return $response;	
 	}
 
 }

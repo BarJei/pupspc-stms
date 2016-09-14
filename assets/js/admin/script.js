@@ -34,6 +34,11 @@ var app = angular.module('app', [
       controller: 'studentCreateController'
     })
 
+     .when('/view-students', {
+      templateUrl: view_path + '/students.php',
+      controller: 'studentController'
+    })
+
      .otherwise({
           templateUrl: view_path+'/index.php',
           controller: 'mainController'

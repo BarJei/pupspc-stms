@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Student_model extends CI_Model {
-	public function addAccount($postData) {
+	function addAccount($postData) {
 		// $config['upload_path'] = './uploads/';
 		// $config['allowed_types'] = 'jpg|jpeg|png';
 		// $config['encrypt_name'] = TRUE;
@@ -29,7 +29,7 @@ class Student_model extends CI_Model {
 		$rfid = $postData["rfid"];
 		$email = $postData["email"];
 		$username = $postData["username"];
-		$password = $postData["password"];
+		// $password = $postData["password"];
 		$retype = $postData["retype"];
 		$firstName = $postData["firstName"];
 		$lastName = $postData["lastName"];
@@ -37,12 +37,12 @@ class Student_model extends CI_Model {
 		// $birthdate = $postData["birthdate"];
 		// $notes = $postData["notes"];
 
-		if($password !== $retype) {
-			return $this->bresponse->setMessage("Failed")
-			->setStatus(BAD_REQUEST)
-			->addData("alert", "Passwords do not match!")
-			->getResponse();	
-		}
+		// if($password !== $retype) {
+		// 	return $this->bresponse->setMessage("Failed")
+		// 	->setStatus(BAD_REQUEST)
+		// 	->addData("alert", "Passwords do not match!")
+		// 	->getResponse();	
+		// }
 
 		try {
 			// $data = ["upload_data" => $this->upload->data()];	

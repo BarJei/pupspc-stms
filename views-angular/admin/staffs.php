@@ -19,7 +19,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="staffData in allStaffs">
+        <tr ng-repeat="staffData in staffs">
             <td>{{ staffData.firstName }}</td>
             <td>{{ staffData.lastName }}</td>
             <td>{{ staffData.email }}</td>

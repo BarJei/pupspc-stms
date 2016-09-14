@@ -14,8 +14,8 @@ app.controller('staffController', function ($http, $scope, cfpLoadingBar) {
 		$http.get(base_url + 'admin/admin/viewAllStaffs/', {
 			params: {}
 		}).success(function(data) {
-			// console.log(data);
-			$scope.allStaffs = data;
+			console.log(data);
+			$scope.staffs = data;
 		}).error(function(data) {
 			console.log(data);
 		});

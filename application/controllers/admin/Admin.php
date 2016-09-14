@@ -40,11 +40,8 @@ class Admin extends CI_Controller {
 	}
 
 	function createStudent() {
-		$response["response"] = $this->student->addAccount($this->input->post());
-		$status = $response["response"]->Status;
-
-		$json["json"] = $status;
-		$this->load->view("response/json_data", $json);
+		$result = $this->student->addAccount($this->input->post());
+		echo $result;	
 	}
 
 	function createStaff() {
@@ -59,31 +56,11 @@ class Admin extends CI_Controller {
 		$this->load->view("response/json_data", $json);
 	}
 
-	// function setExpiry() {
-	// 	$response["response"] = $this->admin->setExpiry($this->input->post());
-	// 	$status = $response["response"]->Status;
+	function viewAllStudents() {
+		$result = $this->student->getAllStudents();	
 
-	// 	if($status == 201) {
-	// 		echo '<script> alert("'.$response["response"]->Data->alert.'"); </script>';
-	// 		$this->index();
-	// 	}
-	// 	elseif($status == 400) {
-	// 		echo '<script> alert("'.$response["response"]->Data->alert.'"); </script>';
-	// 		$this->index();
-	// 	}		
-	// }
-
-	// function upload() {
-	// 	$response["response"] = $this->admin->upload($this->input->post());
-	// 	$status = $response["response"]->Status;
-	// 	echo '<script> alert("'.$response["response"]->Data->alert.'"); </script>';
-
-	// 	if($status == 400) {
-	// 		$this->index();
-	// 	}
-	// 	elseif($status == 200) {
-	// 		$this->index();	
-	// 	}
-	// }
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
 
 }
