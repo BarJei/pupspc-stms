@@ -63,4 +63,28 @@ class Admin extends CI_Controller {
 		$this->load->view("response/json_data", $json);
 	}
 
+	function viewAllOnlineStudents($param) {
+		$result = $this->student->getAllOnlineStudents($param);	
+
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
+
+	function viewAllStudentsInLab() {
+		$result = $this->student->getAllStudentsInLab();	
+
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
+
+	function countOnlineStudents($param) {
+		$result = $this->student->countOnlineStudents($param);
+		echo $result;
+	}
+
+	function countStudentsLab() {
+		$result = $this->student->countStudentsLab();
+		echo $result;
+	}
+
 }

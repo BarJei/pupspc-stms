@@ -47,7 +47,7 @@ date_default_timezone_set("Asia/Manila");
                 <th>Middle Name</th>
                 <th>Last Name</th>
                 <th>Course</th>
-                <th>Year Level</th>
+                <th>Year</th>
                 <th>Validated</th>
                 <th>Logged In</th>
                 <th>Role</th>

@@ -40,7 +40,7 @@ date_default_timezone_set("Asia/Manila");
 
 <div class="row">
 
-  <div class="col-lg-4">
+  <div class="col-lg-4 blink_me">
     <div class="panel panel-primary">
      <div class="panel-heading">
       <div class="row">
@@ -64,7 +64,7 @@ date_default_timezone_set("Asia/Manila");
 <div class="col-lg-3">
   <form ng-submit="logTime(logData)">
     <fieldset>
-      <label for="rfid"> RFID </label>
+      <label for="rfid"> Your RFID will appear here </label>
       <input type="text" class="form-control" id="rfid" ng-model="logData.rfid" autofocus required/>
       <input type="submit" class="display-none"/>
     </fieldset>

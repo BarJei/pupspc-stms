@@ -34,7 +34,7 @@ class Student_model extends CI_Model {
 		catch(PDOException $ex) {
 			return $ex->getMessage();
 		}
-	
+
 	}
 
 	function getAllStudents() {
@@ -48,5 +48,55 @@ class Student_model extends CI_Model {
 		return $result;
 
 	}
+
+	function getAllOnlineStudents($param) {
+
+		$query = $this->db->select()
+		->where("isDeleted", 0)
+		->where("isOnline", $param)
+		->get(TBL_STUDENTS);
+
+		$result = $query->result();
+		
+		return $result;
+
+	}
+
+	function getAllStudentsInLab() {
+		$query = $this->db->select()
+		->where("isDeleted", 0)
+		->where("isAtLab", 1)
+		->get(TBL_STUDENTS);
+
+		$result = $query->result();
+		
+		return $result;
+
+	}
+
+	function countOnlineStudents($param) {
+
+		$usersCount = $this->db->select()
+		->from(TBL_STUDENTS)
+		->where('isDeleted', 0)
+		->where("isOnline", $param)
+		->count_all_results();
+
+		return $usersCount;
+
+	}
+
+	function countStudentsLab() {
+
+		$usersCount = $this->db->select()
+		->from(TBL_STUDENTS)
+		->where('isDeleted', 0)
+		->where("isAtLab", 1)
+		->count_all_results();
+
+		return $usersCount;
+
+	}
+
 
 }

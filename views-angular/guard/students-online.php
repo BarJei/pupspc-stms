@@ -2,12 +2,12 @@
 date_default_timezone_set("Asia/Manila");
 ?> 
 <ol class="breadcrumb">
-  <li class="active">
-    <i class="fa fa-user"></i> {{ header }} 
-  </li>
-  <li>
-    <i class="fa fa-user-plus"></i> <a href="#create-student"> Create </a>
-  </li>
+    <li class="active">
+      <i class="fa fa-home"></i> <a href="#index"> Home </a> 
+    </li>
+      <li class="active">
+          <i class="fa fa-clock-o"></i> Time Log
+      </li>
   </ol>
 
   <div class="row">
@@ -49,7 +49,6 @@ date_default_timezone_set("Asia/Manila");
                 <th>Course</th>
                 <th>Year</th>
                 <th>Validated</th>
-                <th>Logged In</th>
                 <th>Role</th>
             </tr>
         </thead>
@@ -62,7 +61,6 @@ date_default_timezone_set("Asia/Manila");
                 <td>{{ studentData.course }}</td>
                 <td>{{ studentData.yearLevel }}</td>
                 <td>{{ studentData.isValidated == 1 ? 'Yes' : 'No' }}</td>
-                <td>{{ studentData.isOnline == 1 ? 'Yes' : 'No' }}</td>
                 <td>{{ studentData.userType == 1 ? 'L.M.G.' : 'S.A.' }}</td>
             </tr>
         </tbody>

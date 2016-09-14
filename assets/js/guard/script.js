@@ -24,15 +24,30 @@ var app = angular.module('app', [
       controller: 'studentController'
     })
 
+     .when('/students-online', {
+      templateUrl: view_path + '/students-online.php',
+      controller: 'studentOnlineController'
+    })
+
+     .when('/students-offline', {
+      templateUrl: view_path + '/students-online.php',
+      controller: 'studentOfflineController'
+    })
+
+     .when('/students-lab', {
+      templateUrl: view_path + '/students-online.php',
+      controller: 'studentLabController'
+    })
+
      .when('/timelog', {
       templateUrl: view_path + '/timelog.php',
       controller: 'timelogController'
     })
 
      .otherwise({
-          templateUrl: view_path+'/index.php',
-          controller: 'mainController'
-     });
+      templateUrl: view_path+'/index.php',
+      controller: 'mainController'
+    });
 
    });
 
