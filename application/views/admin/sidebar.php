@@ -70,7 +70,7 @@
                         </li>
                       </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a href="javascript:void(0);" data-toggle="collapse" data-target="#offenses"><i class="fa fa-fw fa-warning"></i> Offenses <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="offenses" class="collapse">
                         <li>
@@ -80,7 +80,7 @@
                           <a href="#view-offenses"> View </a>
                         </li>
                       </ul>
-                    </li>
+                    </li> -->
                     
                   </ul>
                 </div>

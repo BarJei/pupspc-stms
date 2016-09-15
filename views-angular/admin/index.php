@@ -38,7 +38,7 @@ date_default_timezone_set("Asia/Manila");
 <div class="row">
 
   <div class="col-lg-4">
-    <a href="#">
+    <a href="#students-online">
       <div class="panel panel-primary">
        <div class="panel-heading">
         <div class="row">
@@ -46,7 +46,7 @@ date_default_timezone_set("Asia/Manila");
           <i class="fa fa-sign-in fa-5x"></i>
         </div>
         <div class="col-xs-9 text-right">
-          <div class="huge"> 150 </div>
+          <div class="huge"> {{ onlineCount }} </div>
           <div> Online Students </div>
         </div>
       </div>
@@ -62,15 +62,15 @@ date_default_timezone_set("Asia/Manila");
 <!-- div online users -->
 
 <div class="col-lg-4">
- <a href="#">
+ <a href="#students-lab">
   <div class="panel panel-green">
     <div class="panel-heading">
      <div class="row">
       <div class="col-xs-3">
-       <i class="fa fa-spoon fa-5x"></i>
+       <i class="fa fa-desktop fa-5x"></i>
      </div>
      <div class="col-xs-9 text-right">
-       <div class="huge"> 36 </div>
+       <div class="huge"> {{ labCount }} </div>
        <div> On Lab. Students </div>
      </div>
    </div>
@@ -86,7 +86,7 @@ date_default_timezone_set("Asia/Manila");
 <!-- div break users -->
 
 <div class="col-lg-4">
-  <a href="#">
+  <a href="#students-offline">
     <div class="panel panel-red">
      <div class="panel-heading">
       <div class="row">
@@ -94,7 +94,7 @@ date_default_timezone_set("Asia/Manila");
         <i class="fa fa-sign-out fa-5x"></i>
       </div>
       <div class="col-xs-9 text-right">
-        <div class="huge"> 88 </div>
+        <div class="huge"> {{ offlineCount }} </div>
         <div> Offline Students </div>
       </div>
     </div>
