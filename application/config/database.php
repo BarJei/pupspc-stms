@@ -79,7 +79,7 @@ $db['default'] = array(
 	'dsn'	=> 'mysql:host=localhost;dbname=db_ams',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '5m@rtw@v3',
+	'password' => '',
 	'database' => '',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
