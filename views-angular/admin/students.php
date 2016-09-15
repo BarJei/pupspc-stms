@@ -63,7 +63,7 @@ date_default_timezone_set("Asia/Manila");
                 <td>{{ studentData.yearLevel }}</td>
                 <td>{{ studentData.isValidated == 1 ? 'Yes' : 'No' }}</td>
                 <td>{{ studentData.isOnline == 1 ? 'Yes' : 'No' }}</td>
-                <td>{{ studentData.userType == 1 ? 'L.M.G.' : 'S.A.' }}</td>
+                <td>{{ userType = (studentData.userType == 10 ? 'N/A' : (studentData.userType == 1 ? 'L.M.G.' : 'S.A.')) }}</td>
             </tr>
         </tbody>
     </table>
