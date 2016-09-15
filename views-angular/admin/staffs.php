@@ -55,7 +55,7 @@ date_default_timezone_set("Asia/Manila");
                 <td>{{ staffData.lastName }}</td>
                 <td>{{ staffData.email }}</td>
                 <td>{{ staffData.username }}</td>
-                <td>{{ staffData.isAdmin == 1 ? 'Admin' : 'Guard' }}</td>
+                <td>{{ staffData.userType == 1 ? 'Admin' : 'Guard' }}</td>
             </tr>
         </tbody>
     </table>
