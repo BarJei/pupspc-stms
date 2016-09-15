@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2016 at 12:25 AM
+-- Generation Time: Sep 15, 2016 at 12:58 PM
 -- Server version: 5.6.30
 -- PHP Version: 5.6.21
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `tbl_staffs` (
   `id` int(10) NOT NULL,
-  `isAdmin` tinyint(2) NOT NULL DEFAULT '0',
+  `userType` tinyint(2) NOT NULL DEFAULT '0' COMMENT '1 = admin, 2 = guard',
   `email` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -38,24 +38,16 @@ CREATE TABLE IF NOT EXISTS `tbl_staffs` (
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime DEFAULT NULL,
   `isDeleted` tinyint(2) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_staffs`
 --
 
-INSERT INTO `tbl_staffs` (`id`, `isAdmin`, `email`, `username`, `password`, `firstName`, `lastName`, `birthdate`, `dateCreated`, `dateUpdated`, `isDeleted`) VALUES
+INSERT INTO `tbl_staffs` (`id`, `userType`, `email`, `username`, `password`, `firstName`, `lastName`, `birthdate`, `dateCreated`, `dateUpdated`, `isDeleted`) VALUES
 (1, 1, 'admin@smartwave.ph', 'admin', '$2a$08$KteJNIkxMAdPz2nemqpSAeyeRKbGmrXKAdn9BF.4Gx5lBbi2s2UbC', 'BarJei', 'Loba', '1995-05-29', '2016-04-17 13:36:54', NULL, 0),
-(2, 1, 'joanne.faller@pupsanpedro.info', 'jfa', '$2a$08$OLEvtiUi.d7EseIUeccCu.uQS30qYMoIWF/nKn8MD2UcbBJBgAsAO', 'Joanne', 'Antonio', NULL, '2016-09-08 07:56:59', NULL, 0),
-(5, 1, 'joanne.faller@pupsanpedro.info2', 'jfaf', '$2a$08$VZr97iTEel/Qx9.hqo00/uGfrTBmpxKC/hj/EO2rOu0deRLnYJ3oK', 'Joanne', 'Antonio', NULL, '2016-09-08 07:58:15', NULL, 0),
-(7, 1, 'joanne.malvar@pupsanpedro.info', 'joanne.malvar', '$2a$08$bPs0HzSjWA6oJ1kA.PJiPuaZ4lnUwy7UpuKsDX02YGiRnCmZTyCPq', 'Joanne', 'Malvar', NULL, '2016-09-08 08:01:23', NULL, 0),
-(8, 0, 'hehehe@as', 'asdf', '$2a$08$v8rvcutuXVylKkzORtKr4OvCOufD8N9vVc0ZYBWIqHzYCfB3ex812', 'Asdfasd', 'Adsf', NULL, '2016-09-08 08:02:13', NULL, 0),
-(10, 0, 'hehehe@as123', 'asdf12312', '$2a$08$sJE34zUmRf/XSETVC/oFNOV4NZnvihAnMvo/k2RUKZIaJjztzGqde', 'Asdfasd', 'Adsf', NULL, '2016-09-08 08:02:55', NULL, 0),
-(11, 0, 'barjei@smartwave.ph', 'barjei', '$2a$08$.w4Dijx./T7XPJmSfcsKpeXOZCYDC69jDc0qupgxZF9bE58RWhhzK', 'Barjei', 'Loba', NULL, '2016-09-08 08:03:22', NULL, 0),
-(13, 1, 'aasf@asdf', 'sdfasdf', '$2a$08$yK05MRMS/8PmRmS8tcuuCeDV8315.3km8rayPWMLrDHtNIf.Z9jPi', 'Asdfasdfa', 'Sdfasdfasfa', NULL, '2016-09-08 08:08:13', NULL, 0),
-(15, 0, 'haha2asd@asdf', 'adfas', '$2a$08$4KfSQkj.4daO.NYwbGuA2ObS8HaxudbGP9gFD/Zpawq.VMsgHQ.VG', 'Adasfas', 'Asdf', NULL, '2016-09-08 08:11:22', NULL, 0),
-(17, 0, 'asdf@asdf', 'dfd', '$2a$08$MB9NrCQeJbuRGPHfjK7LW.gAIuX4p2Jkdy8TrwygLzec1YTotG8Ga', 'Asdfa', 'Adf', NULL, '2016-09-08 08:12:52', NULL, 0),
-(18, 1, 'anthony@gmail.com', 'tonton', '$2a$08$rolJjlcWmEjWIWI1Oi2OgOp9/7ZNrukXwHNduGdt1itpfVeR6npTu', 'Anthony', 'Manuel', NULL, '2016-09-08 08:13:49', NULL, 0);
+(18, 1, 'anthony@gmail.com', 'tonton', '$2a$08$rolJjlcWmEjWIWI1Oi2OgOp9/7ZNrukXwHNduGdt1itpfVeR6npTu', 'Anthony', 'Manuel', NULL, '2016-09-08 08:13:49', NULL, 0),
+(21, 2, 'barjei@smartwave.ph', 'barjei', '$2a$08$7S0XokFyZcxKMDYj5yVtmOqAJqrILfNtfBcA0nv5g1/Mo0HrmNsX2', 'Jeirene Richmond', 'Barbo', NULL, '2016-09-10 18:56:28', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -65,21 +57,79 @@ INSERT INTO `tbl_staffs` (`id`, `isAdmin`, `email`, `username`, `password`, `fir
 
 CREATE TABLE IF NOT EXISTS `tbl_students` (
   `id` int(5) NOT NULL,
-  `rfid` int(40) NOT NULL,
-  `userType` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0 = student, 1 = L.M.G., 2 = S.A.',
-  `isOnline` tinyint(2) NOT NULL DEFAULT '0',
-  `isAtLab` tinyint(2) NOT NULL DEFAULT '0',
   `email` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `firstName` varchar(50) NOT NULL,
+  `middleName` varchar(20) NOT NULL,
   `lastName` varchar(50) NOT NULL,
   `birthdate` date NOT NULL,
+  `studNo` varchar(20) NOT NULL,
+  `yearLevel` tinyint(2) NOT NULL,
+  `course` varchar(20) NOT NULL,
+  `rfid` int(40) NOT NULL,
+  `userType` tinyint(2) NOT NULL DEFAULT '10' COMMENT '10 = student, 1 = L.M.G., 2 = S.A.',
+  `isOnline` tinyint(2) NOT NULL DEFAULT '0',
+  `isAtLab` tinyint(2) NOT NULL DEFAULT '0',
   `isValidated` tinyint(2) NOT NULL DEFAULT '0',
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime DEFAULT NULL,
   `isDeleted` tinyint(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_students`
+--
+
+INSERT INTO `tbl_students` (`id`, `email`, `username`, `password`, `firstName`, `middleName`, `lastName`, `birthdate`, `studNo`, `yearLevel`, `course`, `rfid`, `userType`, `isOnline`, `isAtLab`, `isValidated`, `dateCreated`, `dateUpdated`, `isDeleted`) VALUES
+(1, '', '', '', 'Jeirene Richmond', 'Loba', 'Barbo', '0000-00-00', '2011-00150-sp-0', 4, 'BSIT', 1282427186, 10, 1, 0, 0, '2016-09-15 00:37:44', NULL, 0),
+(3, '', '', '', 'Jierose', 'Camara', 'Escaño', '0000-00-00', '2012-00067-sp-0', 4, 'BSIT', 1384568114, 10, 0, 0, 0, '2016-09-15 00:39:21', NULL, 0),
+(4, '', '', '', 'BarJei', '', 'Loba', '0000-00-00', '2011-00123-sp-0', 3, 'BSIT', 2147483647, 1, 0, 0, 0, '2016-09-15 01:03:04', NULL, 0),
+(10, '', '', '', 'First', '', 'Last', '0000-00-00', '123', 2, 'BSA', 1016651653, 2, 0, 0, 0, '2016-09-15 02:21:16', NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_timelogs`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_timelogs` (
+  `id` int(10) NOT NULL,
+  `rfid` int(20) NOT NULL,
+  `logTime` datetime NOT NULL,
+  `logOut` datetime DEFAULT NULL,
+  `logDate` date NOT NULL,
+  `logHours` time DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_timelogs`
+--
+
+INSERT INTO `tbl_timelogs` (`id`, `rfid`, `logTime`, `logOut`, `logDate`, `logHours`) VALUES
+(1, 1282427186, '2016-09-15 03:43:30', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(2, 2147483647, '2016-09-15 03:44:34', NULL, '2016-09-15', NULL),
+(3, 0, '2016-09-15 03:44:41', NULL, '2016-09-15', NULL),
+(4, 0, '2016-09-15 03:47:25', NULL, '2016-09-15', NULL),
+(5, 0, '2016-09-15 03:47:54', NULL, '2016-09-15', NULL),
+(6, 1282427186, '2016-09-15 03:49:22', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(7, 1282427186, '2016-09-15 03:51:50', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(8, 1282427186, '2016-09-15 03:54:35', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(9, 1282427186, '2016-09-15 03:58:14', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(10, 1282427186, '2016-09-15 03:59:05', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(11, 1282427186, '2016-09-15 03:59:27', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(12, 1282427186, '2016-09-15 04:00:43', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(13, 1282427186, '2016-09-15 04:01:26', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(14, 1282427186, '2016-09-15 04:01:26', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(15, 1282427186, '2016-09-15 04:02:31', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(16, 1282427186, '2016-09-15 04:03:18', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(17, 1282427186, '2016-09-15 04:05:00', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(18, 1282427186, '2016-09-15 04:09:48', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(19, 1282427186, '2016-09-15 04:11:11', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(20, 1282427186, '2016-09-15 04:13:32', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(21, 1282427186, '2016-09-15 04:15:30', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(22, 1282427186, '2016-09-15 04:16:46', '2016-09-15 04:17:38', '2016-09-15', NULL),
+(23, 1282427186, '2016-09-15 04:24:35', NULL, '2016-09-15', NULL);
 
 --
 -- Indexes for dumped tables
@@ -98,10 +148,14 @@ ALTER TABLE `tbl_staffs`
 --
 ALTER TABLE `tbl_students`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `userType` (`userType`),
-  ADD UNIQUE KEY `rfid` (`rfid`);
+  ADD UNIQUE KEY `rfid` (`rfid`),
+  ADD UNIQUE KEY `studNo` (`studNo`);
+
+--
+-- Indexes for table `tbl_timelogs`
+--
+ALTER TABLE `tbl_timelogs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -111,12 +165,17 @@ ALTER TABLE `tbl_students`
 -- AUTO_INCREMENT for table `tbl_staffs`
 --
 ALTER TABLE `tbl_staffs`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `tbl_students`
 --
 ALTER TABLE `tbl_students`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `tbl_timelogs`
+--
+ALTER TABLE `tbl_timelogs`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
