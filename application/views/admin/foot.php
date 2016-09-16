@@ -34,6 +34,8 @@
 
         <script src="<?php echo base_url('assets/js/admin/staff-controller.js'); ?>"></script>
 
+        <script src="<?php echo base_url('assets/js/admin/timelog-controller.js'); ?>"></script>
+
     </body>
 
     </html>

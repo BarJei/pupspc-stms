@@ -54,6 +54,10 @@ var app = angular.module('app', [
       controller: 'studentLabController'
     })
 
+     .when('/timelogs-guard', {
+      templateUrl: view_path + '/timelogs.php',
+      controller: 'timelogController'
+    })
 
      .otherwise({
       templateUrl: view_path+'/index.php',

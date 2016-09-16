@@ -3,10 +3,10 @@ date_default_timezone_set("Asia/Manila");
 ?> 
 <ol class="breadcrumb">
   <li class="active">
-    <i class="fa fa-home"></i> <a href="#index"> Home </a> 
+    <i class="fa fa-user"></i> {{ header }} 
   </li>
-  <li class="active">
-    <i class="fa fa-clock-o"></i> Time Log
+  <li>
+    <i class="fa fa-user-plus"></i> <a href="#create-student"> Create </a>
   </li>
 </ol>
 
@@ -42,22 +42,16 @@ date_default_timezone_set("Asia/Manila");
   <table datatable="ng" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
     <thead>
       <tr>
-        <th>Student #</th>
         <th>Student Name</th>
-        <th>Course</th>
-        <th>Year</th>
-        <th>Validated</th>
-        <th>Role</th>
+        <th>Log In</th>
+        <th>Log Out</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="studentData in students">
-        <td>{{ studentData.studNo }}</td>
-        <td>{{ studentData.lastName + ', ' + studentData.firstName + ' ' + studentData.middleName }}</td>
-        <td>{{ studentData.course }}</td>
-        <td>{{ studentData.yearLevel }}</td>
-        <td>{{ studentData.isValidated == 1 ? 'Yes' : 'No' }}</td>
-        <td>{{ userType = (studentData.userType == 10 ? 'N/A' : (studentData.userType == 1 ? 'L.M.G.' : 'S.A.')) }}</td>
+      <tr ng-repeat="timelogsData in timelogs">
+      <td>{{ timelogsData.lastName + ', ' + timelogsData.firstName + ' ' + timelogsData.middleName }}</td>
+      <td>{{ timelogsData.logTime }} </td>
+      <td>{{ timelogsData.logOut }} </td>
       </tr>
     </tbody>
   </table>
