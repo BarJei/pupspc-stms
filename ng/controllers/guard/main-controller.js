@@ -14,7 +14,7 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 	countOfflineStudents();
 	countStudentsLab();
 
-	// get staffs
+	// get count of online students
 	function countOnlineStudents() {
 
 		// http get method

@@ -48,7 +48,7 @@ date_default_timezone_set("Asia/Manila");
         <i class="fa fa-sign-in fa-5x"></i>
       </div>
       <div class="col-xs-9 text-right">
-        <div class="huge"> 150 </div>
+        <div class="huge"> {{ onlineCount }} </div>
         <div> Online Students </div>
       </div>
     </div>

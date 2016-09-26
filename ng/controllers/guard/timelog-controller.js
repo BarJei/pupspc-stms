@@ -7,6 +7,22 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.set(0.5);
 
 	$scope.header = 'Time Log';
+	
+	countOnlineStudents();
+
+	// get count of online students
+	function countOnlineStudents() {
+
+		// http get method
+		$http.get(base_url + 'admin/admin/countOnlineStudents/1', {
+			params: {}
+		}).success(function(data) {
+			console.log(data);
+			$scope.onlineCount = data;
+		}).error(function(data) {
+			console.log(data);
+		});
+	}
 
 	cfpLoadingBar.complete();
 

@@ -26,13 +26,13 @@
 
         <script src="<?php echo base_url('assets/js/clock.js'); ?>"></script>
 
-        <script src="<?php echo base_url('assets/js/guard/script.js'); ?>"></script>
+        <script src="<?php echo base_url('ng/controllers/guard/script.js'); ?>"></script>
        
-        <script src="<?php echo base_url('assets/js/guard/main-controller.js'); ?>"></script>
+        <script src="<?php echo base_url('ng/controllers/guard/main-controller.js'); ?>"></script>
        
-        <script src="<?php echo base_url('assets/js/guard/student-controller.js'); ?>"></script>
+        <script src="<?php echo base_url('ng/controllers/guard/student-controller.js'); ?>"></script>
         
-        <script src="<?php echo base_url('assets/js/guard/timelog-controller.js'); ?>"></script>
+        <script src="<?php echo base_url('ng/controllers/guard/timelog-controller.js'); ?>"></script>
 
     </body>
 
