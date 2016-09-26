@@ -88,15 +88,10 @@ date_default_timezone_set("Asia/Manila");
   </div>
 
   <div ng-if="isRecorded">
-  <h1> Student Details </h1>
-  <h3> {{ logResult.lastName + ', ' + logResult.firstName + ' ' + logResult.middleName }} </h3>
-  <h3> Course: {{ logResult.course }} </h3>
+    <h1> Student Details </h1>
+    <h3> {{ logResult.lastName + ', ' + logResult.firstName + ' ' + logResult.middleName }} </h3>
+    <h3> Course: {{ logResult.course }} </h3>
   </div>
-
-  <fieldset>
-
-  </fieldset>
-
 </div>
 
 </div>

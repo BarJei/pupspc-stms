@@ -185,8 +185,8 @@ span.user-info > p
 
 {
 
-    background-color: #7e0e09;
-    border-color: #7e0e09;
+	background-color: #7e0e09;
+	border-color: #7e0e09;
 
 }
 
@@ -202,7 +202,7 @@ span.user-info > p
 
 {
 
-  animation: blinker 1s linear infinite;
+	animation: blinker 1s linear infinite;
 
 }
 
@@ -210,6 +210,35 @@ span.user-info > p
 
 {  
 
-  50% { opacity: 0.0; }
+	50% { opacity: 0.0; }
 
+}
+
+input#rfid
+
+{
+
+	border: 0;
+	color: transparent;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+
+}
+
+input#rfid:focus
+
+{
+
+	border-color: inherit;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: none;
+
+}
+
+/* remove autofill color */
+input#rfid:-webkit-autofill {
+	-webkit-text-fill-color: transparent;
+	-webkit-box-shadow: 0 0 0 1000px transparent inset;
 }
