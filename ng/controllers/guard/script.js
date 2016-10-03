@@ -75,5 +75,5 @@ $(document).on('click', '.navbar-collapse.in', function (e) {
 
 var host = window.location.host;
 var loc_origin = window.location.origin;
-var base_url = loc_origin + '/pupspc_ams/';
-var view_path = loc_origin + '/pupspc_ams/ng/views/guard/';
+var base_url = loc_origin + '/pupspc_stms/';
+var view_path = loc_origin + '/pupspc_stms/ng/views/guard/';

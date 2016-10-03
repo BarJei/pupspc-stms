@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> PUPSPC AMS | Admin</title>
+    <title> PUPSPC STMS | Admin</title>
 
     <link href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap.css'); ?>" rel="stylesheet">
     
