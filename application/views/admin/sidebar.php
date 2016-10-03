@@ -17,13 +17,13 @@
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $firstName; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>
+                            <!-- <li>
                                 <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                             </li>
-                            <li class="divider"></li>
+                            <li class="divider"></li> -->
                             <li>
                                 <a href="<?php echo base_url('admin/admin/logOut'); ?>"><i class="fa fa-fw fa-sign-out"></i> Log Out</a>
                             </li>
