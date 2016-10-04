@@ -209,7 +209,7 @@ app.controller('studentOfflineController', function ($http, $scope, cfpLoadingBa
 app.controller('studentLabController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.start();
 
-	$scope.header = 'Students @ Laboratory';
+	$scope.header = 'Students @ I.T. Lab.';
 
 	getAllStudents();
 

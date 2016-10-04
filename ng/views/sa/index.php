@@ -39,7 +39,7 @@ date_default_timezone_set("Asia/Manila");
 <!-- row -->
 
 <div>
-  <table datatable="ng" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+  <table datatable="ng" class="table table-hover" cellspacing="0" width="100%">
     <thead>
       <tr>
         <th>Student #</th>
@@ -55,10 +55,10 @@ date_default_timezone_set("Asia/Manila");
     </thead>
     <tbody>
       <tr ng-repeat="studentData in students">
-        <td>{{ studentData.studNo }}</td>
+        <td> <a href="#student/edit?rfid={{ studentData.rfid }}" data-toggle="tooltip" title="Update" data-placement="bottom" tooltip> {{ studentData.studNo }} </a> </td>
         <td>{{ studentData.firstName }}</td>
         <td>{{ studentData.middleName == '' ? 'N/A' : studentData.middleName }}</td>
-        <td>{{ studentData.lastName }}</td>
+        <td> {{ studentData.lastName }} </td>
         <td>{{ studentData.course }}</td>
         <td>{{ studentData.yearLevel }}</td>
         <td>{{ studentData.isValidated == 1 ? 'Yes' : 'No' }}</td>

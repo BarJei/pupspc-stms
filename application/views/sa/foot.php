@@ -29,6 +29,21 @@
         <script src="<?php echo base_url('ng/controllers/sa/script.js'); ?>"></script>
 
         <script src="<?php echo base_url('ng/controllers/sa/main-controller.js'); ?>"></script>
-        
-    </body>
-    </html>
+
+        <script>
+            $(function(){
+
+            //tooltip
+            $('[data-toggle=tooltip]').hover(function() { 
+            // on mouseenter
+            $(this).tooltip('show');
+        }, function(){
+            // on mouseleave
+            $(this).tooltip('hide');
+        });
+
+        });
+    </script>
+
+</body>
+</html>

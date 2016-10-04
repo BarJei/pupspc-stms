@@ -39,7 +39,7 @@ date_default_timezone_set("Asia/Manila");
 <!-- row -->
 
 <div>
-  <table datatable="ng" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+  <table datatable="ng" class="table table-hover" cellspacing="0" width="100%">
     <thead>
       <tr>
         <th>Student #</th>

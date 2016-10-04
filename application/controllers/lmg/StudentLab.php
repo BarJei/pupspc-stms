@@ -21,7 +21,7 @@ class StudentLab extends CI_Controller {
 
 	function logOut() {
 		$this->session->unset_userdata("studentLab");
-		redirect("login", "refresh");
+		redirect("login/studentLogin", "refresh");
 	}
 
 	function logTime() {

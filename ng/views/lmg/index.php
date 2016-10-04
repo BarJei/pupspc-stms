@@ -51,7 +51,7 @@ date_default_timezone_set("Asia/Manila");
     </div>
   </div>
   <div class="panel-footer" style="color:#337ab7;">
-    <span class="pull-left"> Scan your R.F.I.D. </span>
+    <span class="pull-left"> Scan your R.F.I.D. Card... </span>
     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
     <div class="clearfix"></div>
   </div>

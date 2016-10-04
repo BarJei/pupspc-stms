@@ -21,7 +21,7 @@ class StudentAssistant extends CI_Controller {
 
 	function logOut() {
 		$this->session->unset_userdata("studentAssistant");
-		redirect("login", "refresh");
+		redirect("login/studentLogin", "refresh");
 	}
 
 }

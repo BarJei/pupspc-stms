@@ -10,7 +10,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url('lmg/StudentLab'); ?>"> PUPSPC STMS | Student Assistant </a>
+            <a class="navbar-brand" href="<?php echo base_url('sa/StudentAssistant'); ?>"> PUPSPC STMS | Student Assistant </a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
@@ -25,7 +25,7 @@
                 </li>
                 <li class="divider"></li> -->
                 <li>
-                  <a href="<?php echo base_url('lmg/StudentLab/logOut'); ?>"><i class="fa fa-fw fa-sign-out"></i> Log Out</a>
+                  <a href="<?php echo base_url('sa/StudentAssistant/logOut'); ?>"><i class="fa fa-fw fa-sign-out"></i> Log Out</a>
                 </li>
               </ul>
             </li>

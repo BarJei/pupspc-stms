@@ -52,3 +52,20 @@ var host = window.location.host;
 var loc_origin = window.location.origin;
 var base_url = loc_origin + '/pupspc_stms/';
 var view_path = loc_origin + '/pupspc_stms/ng/views/sa/';
+
+// tooltip fix 
+app.directive('tooltip', function(){
+  return {
+   restrict: 'A',
+   link: function(scope, element, attrs){
+    $(element).hover(function(){
+            // on mouseenter
+            $(element).tooltip('show');
+          }, function(){
+            // on mouseleave
+            $(element).tooltip('hide');
+          });
+  } 
+};
+});
+

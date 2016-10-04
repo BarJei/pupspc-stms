@@ -26,7 +26,7 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 app.controller('timelogLabController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.start();
 
-	$scope.header = 'I.T. Laboratory';
+	$scope.header = 'I.T. Lab.';
 
 	getTimelogs();
 
