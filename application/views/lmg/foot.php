@@ -30,5 +30,7 @@
 
         <script src="<?php echo base_url('ng/controllers/lmg/main-controller.js'); ?>"></script>
 
+        <script src="<?php echo base_url('ng/controllers/lmg/student-controller.js'); ?>"></script>
+        
     </body>
     </html>
