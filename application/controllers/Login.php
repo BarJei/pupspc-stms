@@ -143,7 +143,7 @@ class Login extends CI_Controller {
 					redirect("lmg/StudentLab", "refresh");
 				}
 
-				elseif($userData->userType == 2){
+				elseif($userData->userType == 2) {
 					$this->session->set_userdata("studentAssistant", $userData);
 					redirect('sa/StudentAssistant', 'refresh');
 				}

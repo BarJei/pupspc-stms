@@ -10,7 +10,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url('lmg/StudentLab'); ?>"> PUPSPC STMS | Lab. Maintenance </a>
+            <a class="navbar-brand" href="<?php echo base_url('lmg/StudentLab'); ?>"> PUPSPC STMS | Student Assistant </a>
           </div>
           <!-- Top Menu Items -->
           <ul class="nav navbar-right top-nav">
@@ -37,9 +37,9 @@
               <li class="active">
                 <a href="#index"><i class="fa fa-fw fa-home"></i> Home </a>
               </li>
-              <li>
-                <a href="#students"><i class="fa fa-fw fa-users"></i> Students </a>
-              </li>
+              <!-- <li> -->
+              <!-- <a href="#students"><i class="fa fa-fw fa-users"></i> Students </a> -->
+              <!-- </li> -->
             </ul>
           </div>
 
