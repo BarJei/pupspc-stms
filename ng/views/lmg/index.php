@@ -60,7 +60,6 @@ date_default_timezone_set("Asia/Manila");
 <!-- div online users -->
 
 <div class="col-lg-4">
- <a href="#students-lab">
   <div class="panel panel-green">
     <div class="panel-heading">
      <div class="row">
@@ -79,31 +78,28 @@ date_default_timezone_set("Asia/Manila");
   <div class="clearfix"></div>
 </div>
 </div>
-</a>
 </div>
 <!-- div break users -->
 
 <div class="col-lg-4">
-  <a href="#students-offline">
-    <div class="panel panel-red">
-     <div class="panel-heading">
-      <div class="row">
-       <div class="col-xs-3">
-        <i class="fa fa-sign-out fa-5x"></i>
-      </div>
-      <div class="col-xs-9 text-right">
-        <div class="huge"> {{ offlineCount }} </div>
-        <div> Offline Students </div>
-      </div>
+  <div class="panel panel-red">
+   <div class="panel-heading">
+    <div class="row">
+     <div class="col-xs-3">
+      <i class="fa fa-sign-out fa-5x"></i>
+    </div>
+    <div class="col-xs-9 text-right">
+      <div class="huge"> {{ offlineCount }} </div>
+      <div> Offline Students </div>
     </div>
   </div>
-  <div class="panel-footer" style="color:#d9534f;">
-   <span class="pull-left">Click to view</span>
-   <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-   <div class="clearfix"></div>
- </div>
 </div>
-</a>
+<div class="panel-footer" style="color:#d9534f;">
+ <span class="pull-left">Click to view</span>
+ <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+ <div class="clearfix"></div>
+</div>
+</div>
 </div>
 <!-- div offline users -->
 

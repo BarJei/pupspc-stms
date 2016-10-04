@@ -8,13 +8,13 @@ class Admin_model extends CI_Model {
 		$bcryptPass = $this->bcrypt->hash_password($postData["password"]);
 
 		$insertData = [
-			"userType" => $postData["userType"],
-			"email" => $postData["email"],
-			"username" => $postData["username"],
-			"password" => $bcryptPass,
-			"firstName" => ucwords($postData["firstName"]),
-			"lastName" => ucwords($postData["lastName"]),
-			"dateCreated" => date("Y-m-d H:i:s")
+		"userType" => $postData["userType"],
+		"email" => $postData["email"],
+		"username" => $postData["username"],
+		"password" => $bcryptPass,
+		"firstName" => ucwords($postData["firstName"]),
+		"lastName" => ucwords($postData["lastName"]),
+		"dateCreated" => date("Y-m-d H:i:s")
 		];
 
 		try {
@@ -44,4 +44,27 @@ class Admin_model extends CI_Model {
 
 	}
 
+	function getAllCourses() {
+		$query = $this->db->get(TBL_COURSES);
+
+		$result = $query->result();
+		
+		return $result;
+	}
+
+	function getAllYearLevels() {
+		$query = $this->db->get(TBL_YEARLEVELS);
+
+		$result = $query->result();
+		
+		return $result;
+	}
+
+	function getAllStudTypes() {
+		$query = $this->db->get(TBL_STUDTYPES);
+
+		$result = $query->result();
+		
+		return $result;
+	}
 }

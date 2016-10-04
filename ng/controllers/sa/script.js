@@ -19,6 +19,12 @@ var app = angular.module('app', [
       controller: 'mainController'
     })
 
+     // route for edit user page
+     .when('/student/edit', {
+      templateUrl: view_path + '/student-edit.php',
+      controller: 'studentEditController'
+    })
+
      .otherwise({
       templateUrl: view_path+'/index.php',
       controller: 'mainController'

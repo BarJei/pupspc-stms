@@ -38,24 +38,26 @@ date_default_timezone_set("Asia/Manila");
 <div class="row">
 
   <div class="col-lg-4 blink_me">
-    <div class="panel panel-primary">
-     <div class="panel-heading">
-      <div class="row">
-       <div class="col-xs-3">
-        <i class="fa fa-sign-in fa-5x"></i>
-      </div>
-      <div class="col-xs-9 text-right">
-        <div class="huge"> {{ onlineCount }} </div>
-        <div> Online Students </div>
+    <a href="#students-online">
+      <div class="panel panel-primary">
+       <div class="panel-heading">
+        <div class="row">
+         <div class="col-xs-3">
+          <i class="fa fa-sign-in fa-5x"></i>
+        </div>
+        <div class="col-xs-9 text-right">
+          <div class="huge"> {{ onlineCount }} </div>
+          <div> Online Students </div>
+        </div>
       </div>
     </div>
+    <div class="panel-footer" style="color:#337ab7;">
+      <span class="pull-left"> Scan your R.F.I.D. Card... </span>
+      <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+      <div class="clearfix"></div>
+    </div>
   </div>
-  <div class="panel-footer" style="color:#337ab7;">
-    <span class="pull-left"> Scan your R.F.I.D. Card... </span>
-    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-    <div class="clearfix"></div>
-  </div>
-</div>
+</a>
 </div>
 <!-- div online users -->
 

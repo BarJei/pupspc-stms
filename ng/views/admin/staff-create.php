@@ -127,7 +127,7 @@ date_default_timezone_set("Asia/Manila");
             </div>
             <div class="col-md-6">
               <button type="button" 
-              class="form-control secondary-text" 
+              class="btn btn-default" 
               ng-model="selectedType" 
               data-html="1"
               data-toggle="true"

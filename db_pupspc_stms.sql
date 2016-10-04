@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2016 at 06:23 PM
+-- Generation Time: Oct 04, 2016 at 07:55 PM
 -- Server version: 5.6.30
 -- PHP Version: 5.6.21
 
@@ -19,6 +19,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_pupspc_stms`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_courses`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_courses` (
+  `id` tinyint(2) NOT NULL,
+  `value` varchar(10) NOT NULL,
+  `label` varchar(99) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_courses`
+--
+
+INSERT INTO `tbl_courses` (`id`, `value`, `label`) VALUES
+(1, 'BSIT', 'Bachelor of Science in Information Technology'),
+(2, 'BSA', 'Bachelor of Science in Accountancy'),
+(3, 'BSBA-MM', 'Bachelor of Science in Business Administration Major in Marketing Management'),
+(4, 'BSBA-HRDM', 'Bachelor of Science in Business Administration Major in Human Resource Development Management'),
+(5, 'BSBA-EM', 'Bachelor of Science in Business Administration Major in Entrepreneurial Management'),
+(6, 'BSED-M', 'Bachelor of Science in Education Major in Math'),
+(7, 'BSED-E', 'Bachelor of Science in Education Major in English');
 
 -- --------------------------------------------------------
 
@@ -92,6 +117,27 @@ INSERT INTO `tbl_students` (`id`, `email`, `username`, `password`, `firstName`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_studTypes`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_studTypes` (
+  `id` tinyint(4) NOT NULL,
+  `value` tinyint(2) NOT NULL,
+  `label` varchar(30) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_studTypes`
+--
+
+INSERT INTO `tbl_studTypes` (`id`, `value`, `label`) VALUES
+(1, 10, 'N/A'),
+(2, 1, 'Laboratory Maintenance Group'),
+(3, 2, 'Student Assistant');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_timelogs`
 --
 
@@ -160,9 +206,37 @@ INSERT INTO `tbl_timelogs_lab` (`id`, `rfid`, `logTime`, `logOut`, `logDate`, `l
 (3, 2147483647, '2016-10-05 01:57:05', '2016-10-05 01:57:12', '2016-10-05', NULL),
 (4, 2147483647, '2016-10-05 01:57:14', NULL, '2016-10-05', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_yearLevels`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_yearLevels` (
+  `id` tinyint(2) NOT NULL,
+  `value` tinyint(2) NOT NULL,
+  `label` varchar(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_yearLevels`
+--
+
+INSERT INTO `tbl_yearLevels` (`id`, `value`, `label`) VALUES
+(1, 1, '1st year'),
+(2, 2, '2nd year'),
+(3, 3, '3rd year'),
+(4, 4, '4th year');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_courses`
+--
+ALTER TABLE `tbl_courses`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_staffs`
@@ -181,6 +255,12 @@ ALTER TABLE `tbl_students`
   ADD UNIQUE KEY `studNo` (`studNo`);
 
 --
+-- Indexes for table `tbl_studTypes`
+--
+ALTER TABLE `tbl_studTypes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_timelogs`
 --
 ALTER TABLE `tbl_timelogs`
@@ -193,9 +273,20 @@ ALTER TABLE `tbl_timelogs_lab`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_yearLevels`
+--
+ALTER TABLE `tbl_yearLevels`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `tbl_courses`
+--
+ALTER TABLE `tbl_courses`
+  MODIFY `id` tinyint(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tbl_staffs`
 --
@@ -207,6 +298,11 @@ ALTER TABLE `tbl_staffs`
 ALTER TABLE `tbl_students`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT for table `tbl_studTypes`
+--
+ALTER TABLE `tbl_studTypes`
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `tbl_timelogs`
 --
 ALTER TABLE `tbl_timelogs`
@@ -216,6 +312,11 @@ ALTER TABLE `tbl_timelogs`
 --
 ALTER TABLE `tbl_timelogs_lab`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tbl_yearLevels`
+--
+ALTER TABLE `tbl_yearLevels`
+  MODIFY `id` tinyint(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -87,4 +87,28 @@ class Admin extends CI_Controller {
 		echo $result;
 	}
 
+	function viewCourses() {
+		$result = $this->admin->getAllCourses();
+
+		// die('<pre>' . print_r($result, true));
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
+
+	function viewYearLevels() {
+		$result = $this->admin->getAllYearLevels();
+
+		// die('<pre>' . print_r($result, true));
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
+
+	function viewStudTypes() {
+		$result = $this->admin->getAllStudTypes();
+
+		// die('<pre>' . print_r($result, true));
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
+
 }

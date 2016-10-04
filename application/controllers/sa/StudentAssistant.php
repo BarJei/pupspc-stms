@@ -24,4 +24,15 @@ class StudentAssistant extends CI_Controller {
 		redirect("login/studentLogin", "refresh");
 	}
 
+	function viewStudentData() {
+
+		// die('<pre>' . print_r($this->input->get(), true));
+
+		$result = $this->sa->searchUserByRfid($this->input->get());
+
+		// die('<pre>' . print_r($result, true));
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
+
 }

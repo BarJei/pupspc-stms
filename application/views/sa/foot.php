@@ -30,6 +30,8 @@
 
         <script src="<?php echo base_url('ng/controllers/sa/main-controller.js'); ?>"></script>
 
+        <script src="<?php echo base_url('ng/controllers/sa/student-controller.js'); ?>"></script>
+
         <script>
             $(function(){
 

@@ -36,61 +36,41 @@ app.controller('studentCreateController', function ($http, $scope, cfpLoadingBar
 		course: ''
 	};
 
-	// user type options
-	$scope.userTypes = [{
-		value: 10,
-		label: 'N/A'
-	}, {
-		value: 1,
-		label: 'L.M.G.'
+	getAllDropdownValues();
 
-	}, {
-		value: 2,
-		label: 'Student Assistant'
-	}];
+	function getAllDropdownValues() {
 
-	// year level options
-	$scope.yearLevels = [{
-		value: 1,
-		label: '1st Year'
-	}, {
-		value: 2,
-		label: '2nd Year'
+		// get courses
+		$http.get(base_url + 'admin/admin/viewCourses/', {
+			params: {}
+		}).success(function(data) {
+			console.log(data);
+			$scope.courses = data;
+		}).error(function(data) {
+			console.log(data);
+		});
 
-	}, {
-		value: 3,
-		label: '3rd Year'
-	}, {
-		value: 4,
-		label: '4th Year'
+		// get year levels
+		$http.get(base_url + 'admin/admin/viewYearLevels/', {
+			params: {}
+		}).success(function(data) {
+			console.log(data);
+			$scope.yearLevels = data;
+		}).error(function(data) {
+			console.log(data);
+		});
 
-	}];
+		// get stud types
+		$http.get(base_url + 'admin/admin/viewStudTypes/', {
+			params: {}
+		}).success(function(data) {
+			console.log(data);
+			$scope.userTypes = data;
+		}).error(function(data) {
+			console.log(data);
+		});
 
-	// courses options
-	$scope.courses = [{
-		value: 'BSIT',
-		label: 'Bachelor of Science in Information Technology'
-	}, {
-		value: 'BSA',
-		label: 'Bachelor of Science in Accountancy'
-	}, {
-		value: 'BSBA-MM',
-		label: 'Bachelor of Science in Business Administration Major in Marketing Management'
-	}, {
-		value: 'BSBA-HRDM',
-		label: 'Bachelor of Science in Business Administration Major in Human Resource Development Managament'
-	}, {
-		value: 'BSBA-EM',
-		label: 'Bachelor of Science in Business Administration Major in Entrepreneurial Management'
-	}, {
-		value: 'BSEd-M',
-		label: 'Bachelor of Science in Education Major in Math'
-
-	}, {
-		value: 'BSEd-E',
-		label: 'Bachelor of Science in Education Major in English'
-
-	}];
+	}
 
 	$scope.header = 'Students';
 

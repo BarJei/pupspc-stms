@@ -37,7 +37,7 @@ date_default_timezone_set("Asia/Manila");
 </div>
 <!-- row -->
 
-<form ng-submit="submitAdd(newUser)">
+<form ng-submit="submitUpdate(userData)">
   <fieldset>
 
     <div class="row form-group">
@@ -47,7 +47,7 @@ date_default_timezone_set("Asia/Manila");
         </label>
       </div>
       <div class="col-md-6">
-        <input type="text" class="form-control thin-font" name="email" id="email" ng-model="newUser.studNo" placeholder="2011-00150-SP-0" required autofocus>
+      <input type="text" class="form-control thin-font" name="email" id="email" ng-model="userData.studNo" placeholder="2011-00150-SP-0" required autofocus readonly>
       </div>
     </div>
     <br>
@@ -60,7 +60,7 @@ date_default_timezone_set("Asia/Manila");
         </label>
       </div>
       <div class="col-md-6">
-        <input type="text" class="form-control thin-font" name="firstName" id="firstName" ng-model="newUser.firstName" required>
+        <input type="text" class="form-control thin-font" name="firstName" id="firstName" ng-model="userData.firstName" required readonly>
       </div>
     </div>
     <br>
@@ -73,7 +73,7 @@ date_default_timezone_set("Asia/Manila");
         </label>
       </div>
       <div class="col-md-6">
-        <input type="text" class="form-control thin-font" name="lastName" id="lastName" ng-model="newUser.middleName">
+        <input type="text" class="form-control thin-font" name="lastName" id="lastName" ng-model="userData.middleName" readonly>
       </div>
     </div>
     <br>
@@ -86,7 +86,7 @@ date_default_timezone_set("Asia/Manila");
         </label>
       </div>
       <div class="col-md-6">
-        <input type="text" class="form-control thin-font" name="lastName" id="lastName" ng-model="newUser.lastName" required>
+        <input type="text" class="form-control thin-font" name="lastName" id="lastName" ng-model="userData.lastName" required readonly>
       </div>
     </div>
     <br>
@@ -101,11 +101,10 @@ date_default_timezone_set("Asia/Manila");
       <div class="col-md-9">
         <button type="button" 
         class="btn btn-default" 
-        ng-model="newUser.course" 
+        ng-model="userData.course" 
         data-html="1"
         data-toggle="true"
         bs-options="obj.value as obj.label for obj in courses"
-        placeholder="Select"
         bs-select>Action <span class="caret"></span></button>
       </div>
     </div>
@@ -121,11 +120,10 @@ date_default_timezone_set("Asia/Manila");
       <div class="col-md-9">
         <button type="button" 
         class="btn btn-default" 
-        ng-model="newUser.yearLevel" 
+        ng-model="userData.yearLevel" 
         data-html="1"
         data-toggle="true"
         bs-options="obj.value as obj.label for obj in yearLevels"
-        placeholder="Select"
         bs-select>Action <span class="caret"></span></button>
       </div>
     </div>
@@ -141,30 +139,15 @@ date_default_timezone_set("Asia/Manila");
       <div class="col-md-9">
         <button type="button" 
         class="btn btn-default" 
-        ng-model="newUser.userType" 
+        ng-model="userData.userType" 
         data-html="1"
         data-toggle="true"
         bs-options="obj.value as obj.label for obj in userTypes"
-        placeholder="Select"
         bs-select>Action <span class="caret"></span></button>
       </div>
     </div>
     <br/>
     <!-- /.row -->
-
-    <div class="row form-group">
-      <div class="col-md-3 primary-text">
-        <label>
-          R.F.I.D.
-        </label>
-      </div>
-      <div class="col-md-6">
-        <input type="text" class="form-control thin-font blink_me" name="rfid" id="rfid-create" ng-model="newUser.rfid" placeholder="Scan R.F.I.D. Card..." required>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <input type="submit" class="display-none">
 
   </fieldset>
 
