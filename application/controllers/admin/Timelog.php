@@ -14,4 +14,11 @@ class Timelog extends CI_Controller {
 		$this->load->view("response/json_data", $json);
 	}
 
+	function viewTimelogsLab() {
+		$result = $this->timelog->getTimeLogsLab();
+
+		$json["json"] = $result;
+		$this->load->view("response/json_data", $json);
+	}
+
 }

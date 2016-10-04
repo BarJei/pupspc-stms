@@ -5,10 +5,14 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 
 	$scope.header = 'Home';
 
-	countOnlineStudents();
-	countOfflineStudents();
-	countStudentsLab();
+	getStudCounts();
 
+	function getStudCounts() {
+		countOnlineStudents();
+		countOfflineStudents();
+		countStudentsLab();
+	}
+	
 	// get count of online students
 	function countOnlineStudents() {
 
@@ -16,7 +20,7 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 		$http.get(base_url + 'admin/admin/countOnlineStudents/1', {
 			params: {}
 		}).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			$scope.onlineCount = data;
 		}).error(function(data) {
 			console.log(data);
@@ -29,7 +33,7 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 		$http.get(base_url + 'admin/admin/countOnlineStudents/0', {
 			params: {}
 		}).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			$scope.offlineCount = data;
 		}).error(function(data) {
 			console.log(data);
@@ -42,7 +46,7 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 		$http.get(base_url + 'admin/admin/countStudentsLab/', {
 			params: {}
 		}).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			$scope.labCount = data;
 		}).error(function(data) {
 			console.log(data);
@@ -78,9 +82,11 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 				return;
 			}
 
+			getStudCounts();
 			$scope.isRecorded = true;
 			$scope.notFound = false;
 			$scope.logResult = data[0];
+
 		}).error(function(data) {
 			console.log(data);
 		});

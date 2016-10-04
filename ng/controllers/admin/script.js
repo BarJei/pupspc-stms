@@ -59,6 +59,11 @@ var app = angular.module('app', [
       controller: 'timelogController'
     })
 
+     .when('/timelogs-lab', {
+      templateUrl: view_path + '/timelogs_lab.php',
+      controller: 'timelogLabController'
+    })
+
      .otherwise({
       templateUrl: view_path+'/index.php',
       controller: 'mainController'

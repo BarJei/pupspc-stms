@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title> Log In | Administrator </title>
+	<title> Log In | Student </title>
 	
 	<link href="<?php echo base_url('node_modules/bootstrap/dist/css/bootstrap.css'); ?>" rel="stylesheet">
 	<link href="<?php echo base_url('node_modules/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet" type="text/css">
@@ -20,50 +20,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="container" id="log-in-container">
 		<?php
-		echo form_open("login/submit", ["class"=>"form-log-in"]);
+		echo form_open("login/studentLoginSubmit", ["class"=>"form-log-in"]);
 		?>
 		<?php
-		echo form_error("username");
-		?> 
-		<?php
-		echo form_error("password");
+		echo form_error("rfid-login");
 		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Administrator Log In</h3>
+				<h3 class="panel-title">Student Log In</h3>
 			</div>
 			<div class="panel-body">
 				<fieldset>
+
 					<?php
-					$username = [
-					"name"=>"username",
-					"id"=>"username",
+					$rfid = [
+					"name"=>"rfid-login",
+					"id"=>"rfid-login",
 					"class"=>"form-control",
-					"placeholder"=>"Username",
+					"placeholder"=>"Scan your R.F.I.D.",
 					"autofocus"=>"autofocus"
 					];
-					$password = [
-					"name"=>"password",
-					"id"=>"password",
-					"class"=>"form-control",
-					"placeholder"=>"Password"
-					];
 					?>
-					<div class="input-group">
+
+					<div class="input-group blink_me">
 						<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
 						<div class="form-group">
 							<?php
-							echo form_input($username, set_value("username"));
+							echo form_input($rfid, set_value("rfid-login"));
 							?>
-						</div>
-					</div>
-					<div class="divider"></div>
-					<div class="input-group">
-						<span class="input-group-addon" data-toggle="tooltip" data-placement="bottom" title="Minimum of 8 characters"><i class="fa fa-key fa-fw"></i></span>
-						<div class="form-group">
-							<?php
-							echo form_password($password);
-							?> 
 						</div>
 					</div>
 				</fieldset>
@@ -74,10 +58,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		"id"=>"submit",
 		"name"=>"submit",
 		"value"=>"Log In",
-		"class"=>"btn btn-primary btn-block"
+		"class"=>"display-none"
 		];
 		echo form_submit($submit);
-		echo anchor("login/studentLogin", "Click here if you are a student", ["id"=>"forgot-pass"]);
+		// echo anchor("user/forgotPassword", "Forgot Password?", ["id"=>"forgot-pass"]);
 		echo form_close();
 		?>
 	</div>

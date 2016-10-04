@@ -11,7 +11,7 @@ date_default_timezone_set("Asia/Manila");
 
   <div class="col-md-6">
    <h1 class="page-header">
-    Guard <small></small>
+    Lab. Maintenance <small></small>
   </h1>
 </div>
 <div class="col-md-6">

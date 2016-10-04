@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login_model extends CI_Model {
+
 	public function checkAccount($postData) {
 
 		$username = $postData["username"];
@@ -23,14 +24,17 @@ class Login_model extends CI_Model {
 			->get()->result();
 
 			if(count($resultRow) == 0) {
+
 				return $this->bresponse->setMessage("Failed")
 				->setStatus(NOT_FOUND)
 				->addData("alert", "No user found!")
 				->getResponse();	
+
 			}
 
 			return $response = $this->checkPassword($password, $resultRow);
 		}
+
 		catch(PDOException $ex) {
 
 			return $this->bresponse->setMessage("Error")
@@ -42,6 +46,7 @@ class Login_model extends CI_Model {
 	}
 
 	public function checkPassword($password, $resultRow) {		
+
 		if( $this->bcrypt->check_password($password, $resultRow[0]->password) ) {
 			unset($resultRow[0]->password);
 			return $this->bresponse->setMessage("Success")
@@ -55,5 +60,7 @@ class Login_model extends CI_Model {
 		->setStatus(BAD_REQUEST)
 		->addData("alert", "Wrong password!")
 		->getResponse();	
+
 	}
+	
 }
