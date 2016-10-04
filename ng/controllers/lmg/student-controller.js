@@ -1,7 +1,7 @@
 app.controller('studentController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.start();
 
-	$scope.header = 'Students @ Laboratory';
+	$scope.header = 'Students @ I.T. Lab.';
 
 	getAllStudents();
 

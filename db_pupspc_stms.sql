@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2016 at 12:58 PM
+-- Generation Time: Oct 04, 2016 at 06:23 PM
 -- Server version: 5.6.30
 -- PHP Version: 5.6.21
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_ams`
+-- Database: `db_pupspc_stms`
 --
 
 -- --------------------------------------------------------
@@ -38,16 +38,18 @@ CREATE TABLE IF NOT EXISTS `tbl_staffs` (
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime DEFAULT NULL,
   `isDeleted` tinyint(2) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_staffs`
 --
 
 INSERT INTO `tbl_staffs` (`id`, `userType`, `email`, `username`, `password`, `firstName`, `lastName`, `birthdate`, `dateCreated`, `dateUpdated`, `isDeleted`) VALUES
-(1, 1, 'admin@smartwave.ph', 'admin', '$2a$08$KteJNIkxMAdPz2nemqpSAeyeRKbGmrXKAdn9BF.4Gx5lBbi2s2UbC', 'BarJei', 'Loba', '1995-05-29', '2016-04-17 13:36:54', NULL, 0),
+(1, 1, 'admin@smartwave.ph', 'admin', '$2a$08$7S0XokFyZcxKMDYj5yVtmOqAJqrILfNtfBcA0nv5g1/Mo0HrmNsX2', 'BarJei', 'Loba', '1995-05-29', '2016-04-17 13:36:54', NULL, 0),
 (18, 1, 'anthony@gmail.com', 'tonton', '$2a$08$rolJjlcWmEjWIWI1Oi2OgOp9/7ZNrukXwHNduGdt1itpfVeR6npTu', 'Anthony', 'Manuel', NULL, '2016-09-08 08:13:49', NULL, 0),
-(21, 2, 'barjei@smartwave.ph', 'barjei', '$2a$08$7S0XokFyZcxKMDYj5yVtmOqAJqrILfNtfBcA0nv5g1/Mo0HrmNsX2', 'Jeirene Richmond', 'Barbo', NULL, '2016-09-10 18:56:28', NULL, 0);
+(21, 2, 'barjei@smartwave.ph', 'guard', '$2a$08$7S0XokFyZcxKMDYj5yVtmOqAJqrILfNtfBcA0nv5g1/Mo0HrmNsX2', 'Jeirene Richmond', 'Barbo', NULL, '2016-09-10 18:56:28', NULL, 0),
+(22, 1, 'asdf@asdf', 'asdfadf', '$2a$08$PYtA8I280IqPSODyI621QOUdPj4yIJsE81bMgI3DU6um/ezCnLX12', 'Asdfasdf', 'Adsfas', NULL, '2016-09-16 00:55:12', NULL, 0),
+(23, 2, 'asdfasdf@asdf', 'asdfasdf', '$2a$08$J06GguANo7RZCt3dEx0do.Q3SkHrgCe9OrqSduI9Oe0r4lFN4T5PC', 'Asdf', 'Asdf', NULL, '2016-09-16 00:55:33', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -82,10 +84,10 @@ CREATE TABLE IF NOT EXISTS `tbl_students` (
 --
 
 INSERT INTO `tbl_students` (`id`, `email`, `username`, `password`, `firstName`, `middleName`, `lastName`, `birthdate`, `studNo`, `yearLevel`, `course`, `rfid`, `userType`, `isOnline`, `isAtLab`, `isValidated`, `dateCreated`, `dateUpdated`, `isDeleted`) VALUES
-(1, '', '', '', 'Jeirene Richmond', 'Loba', 'Barbo', '0000-00-00', '2011-00150-sp-0', 4, 'BSIT', 1282427186, 10, 1, 0, 0, '2016-09-15 00:37:44', NULL, 0),
-(3, '', '', '', 'Jierose', 'Camara', 'Escaño', '0000-00-00', '2012-00067-sp-0', 4, 'BSIT', 1384568114, 10, 0, 0, 0, '2016-09-15 00:39:21', NULL, 0),
-(4, '', '', '', 'BarJei', '', 'Loba', '0000-00-00', '2011-00123-sp-0', 3, 'BSIT', 2147483647, 1, 0, 0, 0, '2016-09-15 01:03:04', NULL, 0),
-(10, '', '', '', 'First', '', 'Last', '0000-00-00', '123', 2, 'BSA', 1016651653, 2, 0, 0, 0, '2016-09-15 02:21:16', NULL, 0);
+(1, '', '', '', 'Jeirene Richmond', 'Loba', 'Barbo', '0000-00-00', '2011-00150-sp-0', 4, 'BSIT', 1282427186, 10, 0, 1, 0, '2016-09-15 00:37:44', NULL, 0),
+(3, '', '', '', 'Jierose', 'Camara', 'Escaño', '0000-00-00', '2012-00067-sp-0', 4, 'BSIT', 1384568114, 10, 1, 0, 0, '2016-09-15 00:39:21', NULL, 0),
+(4, '', '', '', 'Labo', '', 'Ratory', '0000-00-00', '2011-00123-sp-0', 3, 'BSIT', 2147483647, 1, 0, 1, 0, '2016-09-15 01:03:04', NULL, 0),
+(10, '', '', '', 'Assistant', '', 'Student', '0000-00-00', '2011-00232-sp-0', 2, 'BSA', 1016651653, 2, 1, 0, 0, '2016-09-15 02:21:16', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `tbl_timelogs` (
   `logOut` datetime DEFAULT NULL,
   `logDate` date NOT NULL,
   `logHours` time DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_timelogs`
@@ -129,7 +131,34 @@ INSERT INTO `tbl_timelogs` (`id`, `rfid`, `logTime`, `logOut`, `logDate`, `logHo
 (20, 1282427186, '2016-09-15 04:13:32', '2016-09-15 04:17:38', '2016-09-15', NULL),
 (21, 1282427186, '2016-09-15 04:15:30', '2016-09-15 04:17:38', '2016-09-15', NULL),
 (22, 1282427186, '2016-09-15 04:16:46', '2016-09-15 04:17:38', '2016-09-15', NULL),
-(23, 1282427186, '2016-09-15 04:24:35', NULL, '2016-09-15', NULL);
+(23, 1282427186, '2016-09-15 04:24:35', NULL, '2016-09-15', NULL),
+(24, 1384568114, '2016-09-26 14:05:22', NULL, '2016-09-26', NULL),
+(25, 1016651653, '2016-09-26 14:05:45', NULL, '2016-09-26', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_timelogs_lab`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_timelogs_lab` (
+  `id` int(10) NOT NULL,
+  `rfid` int(20) NOT NULL,
+  `logTime` datetime NOT NULL,
+  `logOut` datetime DEFAULT NULL,
+  `logDate` date NOT NULL,
+  `logHours` time DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_timelogs_lab`
+--
+
+INSERT INTO `tbl_timelogs_lab` (`id`, `rfid`, `logTime`, `logOut`, `logDate`, `logHours`) VALUES
+(1, 1282427186, '2016-10-05 01:55:11', NULL, '2016-10-05', NULL),
+(2, 2147483647, '2016-10-05 01:56:53', '2016-10-05 01:57:12', '2016-10-05', NULL),
+(3, 2147483647, '2016-10-05 01:57:05', '2016-10-05 01:57:12', '2016-10-05', NULL),
+(4, 2147483647, '2016-10-05 01:57:14', NULL, '2016-10-05', NULL);
 
 --
 -- Indexes for dumped tables
@@ -158,6 +187,12 @@ ALTER TABLE `tbl_timelogs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_timelogs_lab`
+--
+ALTER TABLE `tbl_timelogs_lab`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -165,7 +200,7 @@ ALTER TABLE `tbl_timelogs`
 -- AUTO_INCREMENT for table `tbl_staffs`
 --
 ALTER TABLE `tbl_staffs`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `tbl_students`
 --
@@ -175,7 +210,12 @@ ALTER TABLE `tbl_students`
 -- AUTO_INCREMENT for table `tbl_timelogs`
 --
 ALTER TABLE `tbl_timelogs`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `tbl_timelogs_lab`
+--
+ALTER TABLE `tbl_timelogs_lab`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
