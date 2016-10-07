@@ -106,6 +106,7 @@ app.controller('studentEditController', function ($http, $scope, cfpLoadingBar, 
 			if(data == 1) {
 				$scope.isValidated = true;
 				alert('Student is now validated.');
+				window.location.reload();
 			}
 
 		}).error(function(data) {
