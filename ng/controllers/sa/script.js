@@ -6,7 +6,8 @@ var app = angular.module('app', [
   'ngSanitize', 
   'mgcrea.ngStrap', 
   'datatables',
-  'datatables.bootstrap'
+  'datatables.bootstrap',
+  'frapontillo.bootstrap-switch'
   ]);
 
      // Routes

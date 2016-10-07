@@ -37,7 +37,7 @@ date_default_timezone_set("Asia/Manila");
 </div>
 <!-- row -->
 
-<form ng-submit="submitUpdate(userData)">
+<!-- <form ng-submit="submitUpdate(userData)"> -->
   <fieldset>
 
     <div class="row form-group">
@@ -50,6 +50,8 @@ date_default_timezone_set("Asia/Manila");
         <input type="checkbox" name="validated" id="validated" 
         ng-model="state.isValidated" 
         ng-change="validateStudent()" 
+        switch-active="{{isValidated}}"
+        switch-readonly="{{isValidated}}"
         bs-switch>
       </div>
     </div>
@@ -172,5 +174,4 @@ date_default_timezone_set("Asia/Manila");
     <!-- /.row -->
 
   </fieldset>
-
-</form>
+<!-- </form> -->

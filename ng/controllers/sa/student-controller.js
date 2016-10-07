@@ -51,17 +51,34 @@ app.controller('studentEditController', function ($http, $scope, cfpLoadingBar, 
 
 	// get staffs
 	function getStudentData() {
-
+		$scope.state = {};
 		var rfid = $routeParams.rfid;
 
 		// http get method
 		$http.get(base_url + 'sa/StudentAssistant/viewStudentData/', {
-			params: { 
+			params: {
 				rfid: rfid
 			}
 		}).success(function(data) {
-			// console.log(data[0]);
-			$scope.userData = data[0];
+			var userData = data[0];
+			$scope.userData = userData;
+
+			if(userData.isValidated == 1) {
+				console.log(userData.isValidated);
+				$scope.state = {
+					isValidated: true
+				};
+				$scope.isValidated = true;
+			}
+			else if(userData.isValidated == 2) {
+				$scope.state = {
+					isValidated: false
+				};
+				$scope.isValidated = false;
+			}
+
+			console.log($scope.state);
+
 		}).error(function(data) {
 			console.log(data);
 		});
@@ -85,9 +102,11 @@ app.controller('studentEditController', function ($http, $scope, cfpLoadingBar, 
 			headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
 
 		}).success(function(data) {
-			console.log(data);
-
-
+			// console.log(data);
+			if(data == 1) {
+				$scope.isValidated = true;
+				alert('Student is now validated.');
+			}
 
 		}).error(function(data) {
 			console.log(data);

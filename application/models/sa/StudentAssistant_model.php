@@ -34,7 +34,7 @@ class StudentAssistant_model extends CI_Model {
 			->update(TBL_STUDENTS);
 
 			if($this->db->affected_rows() == 0) {
-				return 0;
+				return 2;
 			}
 
 			return 1;
