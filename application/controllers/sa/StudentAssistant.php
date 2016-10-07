@@ -35,4 +35,10 @@ class StudentAssistant extends CI_Controller {
 		$this->load->view("response/json_data", $json);
 	}
 
+	function validateStudent() {
+
+		$result = $this->sa->validateStudent($this->input->post());
+		echo $result;
+
+	}
 }

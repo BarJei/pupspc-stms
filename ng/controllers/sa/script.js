@@ -26,7 +26,7 @@ var app = angular.module('app', [
     })
 
      .otherwise({
-      templateUrl: view_path+'/index.php',
+      templateUrl: view_path + '/index.php',
       controller: 'mainController'
     });
 
@@ -75,3 +75,30 @@ app.directive('tooltip', function(){
 };
 });
 
+app.directive('bsSwitch', function () {
+  return {
+    restrict: 'A',
+    require: 'ngModel',
+    link: function (scope, element, attrs, ngModelCtrl) {
+      $(element).bootstrapSwitch({
+        onSwitchChange: function (event, state) {
+          scope.$apply(function () {
+            ngModelCtrl.$setViewValue(state);
+          });
+        }
+      });
+
+      var dereg = scope.$watch(function () {
+        return ngModelCtrl.$modelValue;
+      }, function (newVal) {
+        $(element).bootstrapSwitch('state', !!newVal, true);
+        dereg();
+      });
+    }
+  };
+});
+
+$.fn.bootstrapSwitch.defaults.onText = '<i class="fa fa-fw fa-check"></i>';
+$.fn.bootstrapSwitch.defaults.offText = '<i class="fa fa-fw fa-times"></i>';
+$.fn.bootstrapSwitch.defaults.onColor = 'info';
+$.fn.bootstrapSwitch.defaults.offColor = 'danger';

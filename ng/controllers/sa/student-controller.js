@@ -11,13 +11,15 @@ app.controller('studentEditController', function ($http, $scope, cfpLoadingBar, 
 
 	getAllDropdownValues();
 
+	// TODO -- VALIDATE USER
+
 	function getAllDropdownValues() {
 
 		// get courses
 		$http.get(base_url + 'admin/admin/viewCourses/', {
 			params: {}
 		}).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			$scope.courses = data;
 		}).error(function(data) {
 			console.log(data);
@@ -27,7 +29,7 @@ app.controller('studentEditController', function ($http, $scope, cfpLoadingBar, 
 		$http.get(base_url + 'admin/admin/viewYearLevels/', {
 			params: {}
 		}).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			$scope.yearLevels = data;
 		}).error(function(data) {
 			console.log(data);
@@ -37,14 +39,13 @@ app.controller('studentEditController', function ($http, $scope, cfpLoadingBar, 
 		$http.get(base_url + 'admin/admin/viewStudTypes/', {
 			params: {}
 		}).success(function(data) {
-			console.log(data);
+			// console.log(data);
 			$scope.userTypes = data;
 		}).error(function(data) {
 			console.log(data);
 		});
 
 	}
-
 
 	getStudentData();
 
@@ -59,11 +60,39 @@ app.controller('studentEditController', function ($http, $scope, cfpLoadingBar, 
 				rfid: rfid
 			}
 		}).success(function(data) {
-			console.log(data[0]);
+			// console.log(data[0]);
 			$scope.userData = data[0];
 		}).error(function(data) {
 			console.log(data);
 		});
+	}
+
+	$scope.validateStudent = function() {
+
+		var params = {
+			rfid: $scope.userData.rfid
+		};
+
+		// console.log(params);
+
+		// return;
+
+		// http post method to submit form data
+		$http({
+			method  : 'POST',
+			url     : base_url + 'sa/StudentAssistant/validateStudent/',
+			data    : $.param(params), 
+			headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
+
+		}).success(function(data) {
+			console.log(data);
+
+
+
+		}).error(function(data) {
+			console.log(data);
+		});
+
 	}
 
 	cfpLoadingBar.complete();

@@ -25,7 +25,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url('node_modules/angular-datatables/dist/css/angular-datatables.css'); ?>">
     
     <link rel="stylesheet" href="<?php echo base_url('node_modules/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css'); ?>">
-        
+    
+    <link rel="stylesheet" href="<?php echo base_url('node_modules/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css'); ?>">
+
     <link href="<?php echo base_url('node_modules/font-awesome/css/font-awesome.css'); ?>" rel="stylesheet" type="text/css">
     
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">

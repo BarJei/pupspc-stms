@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set("Asia/Manila");
-?> 
+?>
 <ol class="breadcrumb">
   <li>
     <i class="fa fa-users"></i><a href="#view-students"> {{ header }} </a>
@@ -13,7 +13,7 @@ date_default_timezone_set("Asia/Manila");
 <div class="row">
   <div class="col-md-6">
    <h1 class="page-header">
-    {{ header }} <small></small>
+    {{ userData.firstName + ' ' + userData.middleName + ' ' + userData.lastName }} <small></small>
   </h1>
 </div>
 <div class="col-md-6">
@@ -42,12 +42,31 @@ date_default_timezone_set("Asia/Manila");
 
     <div class="row form-group">
       <div class="col-md-3 primary-text">
+        <label for="validated">
+          Validated
+        </label>
+      </div>
+      <div class="col-md-6">
+        <input type="checkbox" name="validated" id="validated" 
+        ng-model="state.isValidated" 
+        ng-change="validateStudent()" 
+        bs-switch>
+      </div>
+    </div>
+    <br>
+    <!-- /.row -->
+
+    <div class="row form-group">
+      <div class="col-md-3 primary-text">
         <label>
           Student No.
         </label>
       </div>
       <div class="col-md-6">
-      <input type="text" class="form-control thin-font" name="email" id="email" ng-model="userData.studNo" placeholder="2011-00150-SP-0" required autofocus readonly>
+        <input type="text" class="form-control thin-font" name="email" id="email" 
+        ng-model="userData.studNo" 
+        placeholder="2011-00150-SP-0" 
+        required autofocus readonly>
       </div>
     </div>
     <br>
@@ -105,6 +124,7 @@ date_default_timezone_set("Asia/Manila");
         data-html="1"
         data-toggle="true"
         bs-options="obj.value as obj.label for obj in courses"
+        disabled 
         bs-select>Action <span class="caret"></span></button>
       </div>
     </div>
@@ -124,6 +144,7 @@ date_default_timezone_set("Asia/Manila");
         data-html="1"
         data-toggle="true"
         bs-options="obj.value as obj.label for obj in yearLevels"
+        disabled 
         bs-select>Action <span class="caret"></span></button>
       </div>
     </div>
@@ -143,6 +164,7 @@ date_default_timezone_set("Asia/Manila");
         data-html="1"
         data-toggle="true"
         bs-options="obj.value as obj.label for obj in userTypes"
+        disabled 
         bs-select>Action <span class="caret"></span></button>
       </div>
     </div>
