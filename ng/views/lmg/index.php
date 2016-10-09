@@ -37,7 +37,7 @@ date_default_timezone_set("Asia/Manila");
 
 <div class="row">
 
-  <div class="col-lg-4 blink_me">
+  <div class="col-lg-4">
     <div class="panel panel-primary">
      <div class="panel-heading">
       <div class="row">
@@ -51,7 +51,7 @@ date_default_timezone_set("Asia/Manila");
     </div>
   </div>
   <div class="panel-footer" style="color:#337ab7;">
-    <span class="pull-left"> Scan your R.F.I.D. Card... </span>
+    <!-- <span class="pull-left">Click to view</span> -->
     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
     <div class="clearfix"></div>
   </div>
@@ -59,7 +59,7 @@ date_default_timezone_set("Asia/Manila");
 </div>
 <!-- div online users -->
 
-<div class="col-lg-4">
+<div class="col-lg-4 blink_me">
   <div class="panel panel-green">
     <div class="panel-heading">
      <div class="row">
@@ -73,7 +73,7 @@ date_default_timezone_set("Asia/Manila");
    </div>
  </div>
  <div class="panel-footer" style="color:#5cb85c;">
-  <span class="pull-left">Click to view</span>
+  <span class="pull-left"> Scan your R.F.I.D. Card... </span>
   <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
   <div class="clearfix"></div>
 </div>
@@ -95,7 +95,7 @@ date_default_timezone_set("Asia/Manila");
   </div>
 </div>
 <div class="panel-footer" style="color:#d9534f;">
- <span class="pull-left">Click to view</span>
+ <!-- <span class="pull-left">Click to view</span> -->
  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
  <div class="clearfix"></div>
 </div>
@@ -140,18 +140,18 @@ date_default_timezone_set("Asia/Manila");
 
 <div class="col-lg-12">
   <!-- good -->
-  <div class="alert alert-info alert-dismissable" ng-if="isRecorded">
+  <div class="alert alert-dismissable" ng-class="alertClass" ng-if="isRecorded">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="fa fa-info-circle"></i>  
-    <strong> Success. </strong> 
-    Time recorded into database.
+    <strong> {{ logMessage.header }} </strong> 
+    {{ logMessage.body }}
   </div>
   <!-- error -->
   <div class="alert alert-danger alert-dismissable" ng-if="notFound">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="fa fa-warning"></i>  
-    <strong> Error 404. </strong> 
-    No student data found! Please try again.
+    <strong> ERROR! </strong> 
+    No student data found, Please try again.
   </div>
 
   <div ng-if="isRecorded">
