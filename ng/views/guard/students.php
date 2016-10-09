@@ -38,33 +38,45 @@ date_default_timezone_set("Asia/Manila");
 </div>
 <!-- row -->
 
-<div>
-  <table datatable="ng" class="table table-hover" cellspacing="0" width="100%">
-    <thead>
-      <tr>
-        <th>Student #</th>
-        <th>First Name</th>
-        <th>Middle Name</th>
-        <th>Last Name</th>
-        <th>Course</th>
-        <th>Year</th>
-        <th>Validated</th>
-        <th>Logged In</th>
-        <th>Role</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="studentData in students">
-        <td>{{ studentData.studNo }}</td>
-        <td>{{ studentData.firstName }}</td>
-        <td>{{ studentData.middleName == '' ? 'N/A' : studentData.middleName }}</td>
-        <td>{{ studentData.lastName }}</td>
-        <td>{{ studentData.course }}</td>
-        <td>{{ studentData.yearLevel }}</td>
-        <td>{{ studentData.isValidated == 1 ? 'Yes' : 'No' }}</td>
-        <td>{{ studentData.isOnline == 1 ? 'Yes' : 'No' }}</td>
-        <td>{{ userType = (studentData.userType == 10 ? 'N/A' : (studentData.userType == 1 ? 'L.M.G.' : 'S.A.')) }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-table"></i> Table </h3>
+      </div>
+      <div class="panel-body">
+        <table datatable="ng" class="table table-hover table-bordered" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Student #</th>
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Last Name</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Validated</th>
+              <th>Online</th>
+              <th>@IT Lab</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="studentData in students">
+              <td>{{ studentData.studNo }}</td>
+              <td>{{ studentData.firstName }}</td>
+              <td>{{ studentData.middleName == '' ? 'N/A' : studentData.middleName }}</td>
+              <td>{{ studentData.lastName }}</td>
+              <td>{{ studentData.course }}</td>
+              <td>{{ studentData.yearLevel }}</td>
+              <td ng-class="studentData.isValidated == 1 ? 'info' : 'danger' ">{{ studentData.isValidated == 1 ? 'Yes' : 'No' }}</td>
+              <td ng-class="studentData.isOnline == 1 ? 'info' : 'danger' " >{{ studentData.isOnline == 1 ? 'Yes' : 'No' }}</td>
+              <td ng-class="studentData.isAtLab == 1 ? 'success' : 'danger' " >{{ studentData.isAtLab == 1 ? 'Yes' : 'No' }}</td>
+              <td>{{ userType = (studentData.userType == 10 ? 'N/A' : (studentData.userType == 1 ? 'L.M.G.' : 'S.A.')) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- row -->
 </div>

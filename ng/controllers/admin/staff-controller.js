@@ -33,7 +33,7 @@ app.controller('staffCreateController', function ($http, $scope, cfpLoadingBar) 
 	// $scope.source = assetsImages;
 
 	// set page header
-	$scope.header = 'Staffs';
+	$scope.header = 'Create';
 
 	// selected staff type default
 	$scope.selectedType = '';

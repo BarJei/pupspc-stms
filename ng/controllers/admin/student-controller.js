@@ -72,7 +72,7 @@ app.controller('studentCreateController', function ($http, $scope, cfpLoadingBar
 
 	}
 
-	$scope.header = 'Students';
+	$scope.header = 'Create';
 
 	cfpLoadingBar.complete();
 

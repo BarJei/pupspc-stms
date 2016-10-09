@@ -106,7 +106,13 @@ date_default_timezone_set("Asia/Manila");
 </div>
 <!-- row -->
 
-<div class="row">
+<div class="row" ng-if="isScanned">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-table"></i> Message </h3>
+      </div>
+      <div class="panel-body">
 
   <!-- <div class="col-lg-4 blink_me">
     <div class="panel panel-primary">
@@ -128,6 +134,7 @@ date_default_timezone_set("Asia/Manila");
   </div>
 </div>
 </div> -->
+
 
 <div class="col-lg-3">
   <form ng-submit="logTime(logData)" accept-charset="utf-8">
@@ -155,10 +162,43 @@ date_default_timezone_set("Asia/Manila");
   </div>
 
   <div ng-if="isRecorded">
-    <h1> Student Details </h1>
-    <h3> {{ logResult.lastName + ', ' + logResult.firstName + ' ' + logResult.middleName }} </h3>
-    <h3> Course: {{ logResult.course }} </h3>
+
+    <table class="table">
+
+      <thead> 
+        <h3> Student Details </h3>
+      </thead>
+      <tbody>
+        <tr>
+        <th class="th-rfid-scanned"> Name </th>
+          <td> 
+            {{ logResult.lastName + ', ' + logResult.firstName + ' ' + logResult.middleName }}
+          </td>
+        </tr>
+
+        <tr>
+          <th> Course </th>
+          <td>
+            {{ logResult.course }}
+          </td>
+        </tr>
+
+        <tr>
+          <th> Year </th>
+          <td> 
+            {{ logResult.yearLevel }}
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
   </div>
+
 </div>
 
+</div>
+</div>
+</div>
+<!-- row -->
 </div>

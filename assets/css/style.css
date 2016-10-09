@@ -238,7 +238,19 @@ input#rfid:focus
 }
 
 /* remove autofill color */
-input#rfid:-webkit-autofill {
+input#rfid:-webkit-autofill 
+
+{
+
 	-webkit-text-fill-color: transparent;
 	-webkit-box-shadow: 0 0 0 1000px transparent inset;
+
+}
+
+.th-rfid-scanned
+
+{
+
+	width: 10%;
+
 }

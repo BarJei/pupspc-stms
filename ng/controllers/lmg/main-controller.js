@@ -67,6 +67,8 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 
       var studentData= data[0];
 
+      $scope.isScanned = true;
+
       $scope.logData = {
         rfid: ''
       };
