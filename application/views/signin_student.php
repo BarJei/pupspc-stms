@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		"class"=>"display-none"
 		];
 		echo form_submit($submit);
-		// echo anchor("user/forgotPassword", "Forgot Password?", ["id"=>"forgot-pass"]);
+		echo anchor("login", "Click here for staff login", ["id"=>"forgot-pass"]);
 		echo form_close();
 		?>
 	</div>

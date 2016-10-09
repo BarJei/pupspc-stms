@@ -9,7 +9,7 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 	function getTimelogs() {
 
 		// http get method
-		$http.get(base_url + 'admin/timelog/', {
+		$http.get(base_url + 'admin/timelog/viewTimelogsLab', {
 			params: {}
 		}).success(function(data) {
 			console.log(data);
@@ -20,5 +20,5 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 	}
 
 	cfpLoadingBar.complete();
-	
+
 });

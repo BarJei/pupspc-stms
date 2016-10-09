@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Manila");
 ?> 
 <ol class="breadcrumb">
   <li class="active">
-    <i class="fa fa-clock-o"></i> {{ header }} 
+    <i class="fa fa-user"></i> {{ header }} 
   </li>
 </ol>
 

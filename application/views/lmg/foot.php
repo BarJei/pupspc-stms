@@ -32,5 +32,7 @@
 
         <script src="<?php echo base_url('ng/controllers/lmg/student-controller.js'); ?>"></script>
         
+        <script src="<?php echo base_url('ng/controllers/lmg/timelog-controller.js'); ?>"></script>
+        
     </body>
     </html>

@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Administrator Log In</h3>
+				<h3 class="panel-title">Staff Log In</h3>
 			</div>
 			<div class="panel-body">
 				<fieldset>
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		"class"=>"btn btn-primary btn-block"
 		];
 		echo form_submit($submit);
-		echo anchor("login/studentLogin", "Click here if you are a student", ["id"=>"forgot-pass"]);
+		echo anchor("login/studentLogin", "Click here for student login", ["id"=>"forgot-pass"]);
 		echo form_close();
 		?>
 	</div>

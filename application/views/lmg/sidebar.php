@@ -40,6 +40,9 @@
               <li>
                 <a href="#students"><i class="fa fa-fw fa-users"></i> Students </a>
               </li>
+              <li>
+                <a href="#timelog"><i class="fa fa-fw fa-clock-o"></i> Time Logs </a>
+              </li>
             </ul>
           </div>
 

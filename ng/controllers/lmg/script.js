@@ -21,8 +21,14 @@ var app = angular.module('app', [
 
      // students
      .when('/students', {
-      templateUrl: view_path + '/timelog.php',
+      templateUrl: view_path + '/students.php',
       controller: 'studentController'
+    })
+
+     // timelog
+     .when('/timelog', {
+      templateUrl: view_path + '/timelog.php',
+      controller: 'timelogController'
     })
 
      .otherwise({
