@@ -72,6 +72,8 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 		}).success(function(data) {
 			console.log(data);
 
+			var studentData= data[0];
+
 			$scope.logData = {
 				rfid: ''
 			};
@@ -85,7 +87,24 @@ app.controller('mainController', function ($http, $scope, cfpLoadingBar) {
 			getStudCounts();
 			$scope.isRecorded = true;
 			$scope.notFound = false;
-			$scope.logResult = data[0];
+			$scope.logResult = studentData;
+
+			if(studentData.isOnline == 1) {
+				$scope.alertClass = 'alert-info';
+				$scope.logMessage = {
+					header: 'LOGGED IN.',
+					body: 'Time in recorded.'
+				};
+			}
+
+			else if(studentData.isOnline == 0) {
+				$scope.alertClass = 'alert-danger';
+				$scope.logMessage = {
+					header: 'LOGGED OUT.',
+					body: 'Time out recorded.'
+				};
+			}
+
 
 		}).error(function(data) {
 			console.log(data);

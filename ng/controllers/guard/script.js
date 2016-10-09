@@ -53,7 +53,8 @@ var app = angular.module('app', [
 
      // remove spinner
      app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
-      cfpLoadingBarProvider.includeSpinner = false;
+      cfpLoadingBarProvider.includeSpinner = true; // Show the spinner
+      cfpLoadingBarProvider.includeBar = true; // Show the bar.
     }]);
 
 // Global Variables

@@ -146,18 +146,18 @@ date_default_timezone_set("Asia/Manila");
 
 <div class="col-lg-12">
   <!-- good -->
-  <div class="alert alert-info alert-dismissable" ng-if="isRecorded">
+  <div class="alert alert-dismissable" ng-class="alertClass" ng-if="isRecorded">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="fa fa-info-circle"></i>  
-    <strong> Success. </strong> 
-    Time recorded into database.
+    <strong> {{ logMessage.header }} </strong> 
+    {{ logMessage.body }}
   </div>
   <!-- error -->
   <div class="alert alert-danger alert-dismissable" ng-if="notFound">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     <i class="fa fa-warning"></i>  
-    <strong> Error 404. </strong> 
-    No student data found! Please try again.
+    <strong> ERROR! </strong> 
+    No student data found, Please try again.
   </div>
 
   <div ng-if="isRecorded">
