@@ -112,6 +112,15 @@ date_default_timezone_set("Asia/Manila");
 </div>
 <!-- row -->
 
+<div class="col-lg-3">
+  <form ng-submit="logTime(logData)" accept-charset="utf-8">
+    <fieldset>
+      <input type="text" id="rfid" ng-model="logData.rfid" autofocus required autocomplete="off"/>
+      <input type="submit" class="display-none"/>
+    </fieldset>
+  </form>
+</div>
+
 <div class="row" ng-if="isScanned">
   <div class="col-md-12">
     <div class="panel panel-default">
@@ -140,15 +149,6 @@ date_default_timezone_set("Asia/Manila");
   </div>
 </div>
 </div> -->
-
-<div class="col-lg-3">
-  <form ng-submit="logTime(logData)" accept-charset="utf-8">
-    <fieldset>
-      <input type="text" id="rfid" ng-model="logData.rfid" autofocus required autocomplete="off"/>
-      <input type="submit" class="display-none"/>
-    </fieldset>
-  </form>
-</div>
 
 <div class="col-lg-12">
   <!-- good -->
