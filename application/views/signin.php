@@ -28,13 +28,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php
 		echo form_error("password");
 		?>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Staff Log In</h3>
-			</div>
+		<div class="panel panel-default panel-login-pupspc">
+			<legend class="panel-heading panel-heading-pupspc">
+				<i class="fa fa-spin fa-clock-o"></i> PUP San Pedro STMS
+			</legend>
 			<div class="panel-body">
 				<fieldset>
 					<?php
+					// element props
 					$username = [
 					"name"=>"username",
 					"id"=>"username",
@@ -42,11 +43,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					"placeholder"=>"Username",
 					"autofocus"=>"autofocus"
 					];
+
 					$password = [
 					"name"=>"password",
 					"id"=>"password",
 					"class"=>"form-control",
 					"placeholder"=>"Password"
+					];
+
+					$submit = [
+					"id"=>"submit",
+					"name"=>"submit",
+					"value"=>"Log In",
+					"class"=>"btn btn-primary btn-block"
 					];
 					?>
 					<div class="input-group">
@@ -67,17 +76,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</div>
 					</div>
 				</fieldset>
+				<div id="div-submit-login">
+					<?php 
+					echo form_submit($submit);
+					?>
+				</div>
 			</div>
 		</div>
 		<?php
-		$submit = [
-		"id"=>"submit",
-		"name"=>"submit",
-		"value"=>"Log In",
-		"class"=>"btn btn-primary btn-block"
-		];
-		echo form_submit($submit);
-		echo anchor("login/studentLogin", "Click here for student login", ["id"=>"forgot-pass"]);
+		echo anchor("login/studentLogin", "Click here for student login", ["id"=>"link-switch-login"]);
 		echo form_close();
 		?>
 	</div>

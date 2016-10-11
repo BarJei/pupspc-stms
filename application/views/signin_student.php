@@ -25,10 +25,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php
 		echo form_error("rfid-login");
 		?>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Student Log In</h3>
-			</div>
+		<div class="panel panel-default panel-login-pup">
+			<legend class="panel-heading panel-heading-pupspc">
+				<i class="fa fa-spin fa-clock-o"></i> PUP San Pedro STMS
+			</legend>
 			<div class="panel-body">
 				<fieldset>
 
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		"class"=>"display-none"
 		];
 		echo form_submit($submit);
-		echo anchor("login", "Click here for staff login", ["id"=>"forgot-pass"]);
+		echo anchor("login", "Click here for staff login", ["id"=>"link-switch-login"]);
 		echo form_close();
 		?>
 	</div>
