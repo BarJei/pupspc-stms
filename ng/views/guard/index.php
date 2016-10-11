@@ -115,7 +115,7 @@ date_default_timezone_set("Asia/Manila");
 <div class="col-lg-3">
   <form ng-submit="logTime(logData)" accept-charset="utf-8">
     <fieldset>
-      <input type="text" id="rfid" ng-model="logData.rfid" autofocus required autocomplete="off"/>
+      <input type="text" id="rfid2" ng-model="logData.rfid" autofocus required autocomplete="off"/>
       <input type="submit" class="display-none"/>
     </fieldset>
   </form>

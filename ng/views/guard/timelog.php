@@ -45,6 +45,7 @@ date_default_timezone_set("Asia/Manila");
         <table datatable="ng" class="table table-hover table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
+              <th>Student #</th>
               <th>Student Name</th>
               <th class="info">Log In</th>
               <th class="danger">Log Out</th>
@@ -52,6 +53,7 @@ date_default_timezone_set("Asia/Manila");
           </thead>
           <tbody>
             <tr ng-repeat="timelogsData in timelogs">
+              <td>{{ timelogsData.studNo }} </td>
               <td>{{ timelogsData.lastName + ', ' + timelogsData.firstName + ' ' + timelogsData.middleName }}</td>
               <td>{{ timelogsData.logTime }} </td>
               <td>{{ timelogsData.logOut }} </td>
