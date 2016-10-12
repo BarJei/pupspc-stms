@@ -309,7 +309,7 @@ span.input-group-addon
 
 {
 
-font-size: 25px;
+	font-size: 25px;
 
 }
 
@@ -317,7 +317,16 @@ font-size: 25px;
 
 {
 
-  top: 50%;
-  left: 50%;
+	top: 50%;
+	left: 50%;
+
+}
+
+#loading-bar .bar 
+
+{
+
+	top: 50px;
+	height: 3px;
 
 }
