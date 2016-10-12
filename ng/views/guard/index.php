@@ -172,7 +172,7 @@ date_default_timezone_set("Asia/Manila");
 
       <thead> 
         <tr>
-        <th class="th-rfid-scanned " colspan="2">
+        <th class="th-rfid-scanned" colspan="2">
             Student Details
           </th>
         </tr>

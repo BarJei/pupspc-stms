@@ -162,10 +162,14 @@ date_default_timezone_set("Asia/Manila");
 
   <div ng-if="isRecorded">
 
-    <table class="table">
+    <table class="table text-studentdetails-justgotlogged">
 
       <thead> 
-        <h3> Student Details </h3>
+        <tr>
+          <th class="th-rfid-scanned" colspan="2">
+            Student Details
+          </th>
+        </tr>
       </thead>
       <tbody>
         <tr>
@@ -186,6 +190,13 @@ date_default_timezone_set("Asia/Manila");
           <th> Year </th>
           <td> 
             {{ logResult.yearLevel }}
+          </td>
+        </tr>
+
+        <tr>
+          <th> Validated </th>
+          <td> 
+            {{ (logResult.isValidated == 1 ? 'Yes' : ' No') }}
           </td>
         </tr>
       </tbody>
