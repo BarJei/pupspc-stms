@@ -73,8 +73,17 @@ var app = angular.module('app', [
 
      // remove spinner
      app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
-      cfpLoadingBarProvider.includeSpinner = true; // Show the spinner
-      cfpLoadingBarProvider.includeBar = true; // Show the bar.
+      // Show the spinner
+      cfpLoadingBarProvider.includeSpinner = true; 
+
+      // Show the bar.
+      cfpLoadingBarProvider.includeBar = true; 
+
+      // modify template
+      cfpLoadingBarProvider.parentSelector = '#navbar';
+      cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><div class="color-gold"><span class="fa fa-spinner fa-spin"></span> Loading... </div></div>';
+      // cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner">Loading...</div>';
+      // cfpLoadingBarProvider.spinnerTemplate = '<div id="loading-bar-spinner"><div class="spinner-icon"></div></div>';
     }]);
 
 // Global Variables

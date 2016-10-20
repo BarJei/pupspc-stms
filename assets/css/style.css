@@ -328,5 +328,26 @@ span.input-group-addon
 
 	top: 50px;
 	height: 3px;
+	background-color: #FFD700;
+
+}
+
+.color-gold
+
+{
+
+	color: #FFD700;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+
+}
+
+.color-maroon
+
+{
+
+	color: #7e0e09;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px;
 
 }

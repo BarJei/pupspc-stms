@@ -148,6 +148,11 @@ class Login extends CI_Controller {
 					redirect('sa/StudentAssistant', 'refresh');
 				}
 
+				elseif($userData->userType == 10) {
+					echo '<script> alert("FORBIDDEN"); </script>';
+					$this->studentLogin();
+				}
+
 			}	
 		}
 
