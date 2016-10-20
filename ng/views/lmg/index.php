@@ -59,26 +59,28 @@ date_default_timezone_set("Asia/Manila");
 </div>
 <!-- div online users -->
 
-<div class="col-lg-4 blink_me">
-  <div class="panel panel-green">
-    <div class="panel-heading">
-     <div class="row">
-      <div class="col-xs-3">
-       <i class="fa fa-desktop fa-5x"></i>
-     </div>
-     <div class="col-xs-9 text-right">
-       <div class="huge"> {{ labCount }} </div>
-       <div> On Lab. Students </div>
+<a href="#students">
+  <div class="col-lg-4 blink_me">
+    <div class="panel panel-green">
+      <div class="panel-heading">
+       <div class="row">
+        <div class="col-xs-3">
+         <i class="fa fa-desktop fa-5x"></i>
+       </div>
+       <div class="col-xs-9 text-right">
+         <div class="huge"> {{ labCount }} </div>
+         <div> On Lab. Students </div>
+       </div>
      </div>
    </div>
- </div>
- <div class="panel-footer" style="color:#5cb85c;">
-  <span class="pull-left"> Scan your R.F.I.D. Card... </span>
-  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-  <div class="clearfix"></div>
+   <div class="panel-footer" style="color:#5cb85c;">
+    <span class="pull-left"> Scan your R.F.I.D. Card... </span>
+    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+    <div class="clearfix"></div>
+  </div>
 </div>
 </div>
-</div>
+</a>
 <!-- div break users -->
 
 <div class="col-lg-4">
