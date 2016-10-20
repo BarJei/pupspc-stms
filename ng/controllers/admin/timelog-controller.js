@@ -5,12 +5,14 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 
 	getTimelogs();
 
+	var params = {};
+
 	// get staffs
-	function getTimelogs() {
+	function getTimelogs(params) {
 
 		// http get method
 		$http.get(base_url + 'admin/timelog/', {
-			params: {}
+			params: params
 		}).success(function(data) {
 			console.log(data);
 			$scope.timelogs = data;
@@ -19,9 +21,25 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 		});
 	}
 
-	cfpLoadingBar.complete();
+	$scope.dateScheduled = new Date();
 
-});
+	$scope.showByDate = function(dateSelected) { 
+
+		var dateForDb = formatDate(dateSelected);
+
+		params = {
+			date: dateForDb
+		};
+
+     	// console.log(dateForDb);
+     	getTimelogs(params);
+     }
+
+     cfpLoadingBar.complete();
+
+
+
+ });
 
 app.controller('timelogLabController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.start();

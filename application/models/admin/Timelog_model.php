@@ -3,19 +3,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Timelog_model extends CI_Model {
 
-	function getTimelogs() {
+	function getTimelogs($params) {
 
 		$dateToday = date("Y-m-d");
 
-		$timeLogQuery = $this->db->select("tbl_timelogs.id, studNo, lastName, firstName, middleName, logDate, logTime, logOut")
-		->from(TBL_LOGS)
-		->order_by("logTime")
-		->join(TBL_STUDENTS, "tbl_timelogs.rfid = tbl_students.rfid")
-		->where("logDate", $dateToday)
-		->get();
+		if(empty($params)) {
+			$timeLogQuery = $this->db->select("tbl_timelogs.id, studNo, lastName, firstName, middleName, logDate, logTime, logOut")
+			->from(TBL_LOGS)
+			->order_by("logTime")
+			->join(TBL_STUDENTS, "tbl_timelogs.rfid = tbl_students.rfid")
+			->where("logDate", $dateToday)
+			->get();
 
-		return $timeLogQuery->result();
+			return $timeLogQuery->result();
+		}
 
+		else {
+			$timeLogQuery = $this->db->select("tbl_timelogs.id, studNo, lastName, firstName, middleName, logDate, logTime, logOut")
+			->from(TBL_LOGS)
+			->order_by("logTime")
+			->join(TBL_STUDENTS, "tbl_timelogs.rfid = tbl_students.rfid")
+			->where("logDate", $params["date"])
+			->get();
+
+			return $timeLogQuery->result();
+		}
 	}
 
 	function getTimelogsLab() {
