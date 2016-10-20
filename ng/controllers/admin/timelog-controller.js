@@ -2,10 +2,13 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.start();
 
 	$scope.header = 'Guard';
+	$scope.dateSelected = new Date();
 
-	getTimelogs();
+	var params = {
+		date: formatDate($scope.dateSelected)
+	};
 
-	var params = {};
+	getTimelogs(params);
 
 	// get staffs
 	function getTimelogs(params) {
@@ -21,7 +24,7 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
 		});
 	}
 
-	$scope.dateScheduled = new Date();
+	cfpLoadingBar.complete();
 
 	$scope.showByDate = function(dateSelected) { 
 
@@ -35,25 +38,25 @@ app.controller('timelogController', function ($http, $scope, cfpLoadingBar) {
      	getTimelogs(params);
      }
 
-     cfpLoadingBar.complete();
-
-
-
  });
 
 app.controller('timelogLabController', function ($http, $scope, cfpLoadingBar) {
 	cfpLoadingBar.start();
 
 	$scope.header = 'I.T. Lab.';
+	$scope.dateSelectedLab = new Date();
+	var paramsLab = {
+		date: formatDate($scope.dateSelectedLab)
+	};
 
-	getTimelogs();
+	getTimelogsLab(paramsLab);
 
 	// get staffs
-	function getTimelogs() {
+	function getTimelogsLab(paramsLab) {
 
 		// http get method
 		$http.get(base_url + 'admin/timelog/viewTimelogsLab/', {
-			params: {}
+			params: paramsLab
 		}).success(function(data) {
 			console.log(data);
 			$scope.timelogs = data;
@@ -64,4 +67,16 @@ app.controller('timelogLabController', function ($http, $scope, cfpLoadingBar) {
 
 	cfpLoadingBar.complete();
 
-});
+	$scope.showByDateLab = function(dateSelectedLab) { 
+
+		var dateForDbLab = formatDate(dateSelectedLab);
+
+		paramsLab = {
+			date: dateForDbLab
+		};
+
+     	// console.log(dateForDb);
+     	getTimelogsLab(paramsLab);
+     }
+
+ });

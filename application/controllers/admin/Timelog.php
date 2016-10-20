@@ -15,7 +15,7 @@ class Timelog extends CI_Controller {
 	}
 
 	function viewTimelogsLab() {
-		$result = $this->timelog->getTimeLogsLab();
+		$result = $this->timelog->getTimeLogsLab($this->input->get());
 
 		$json["json"] = $result;
 		$this->load->view("response/json_data", $json);

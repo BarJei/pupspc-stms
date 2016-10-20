@@ -45,6 +45,25 @@ date_default_timezone_set("Asia/Manila");
         <h3 class="panel-title"><i class="fa fa-table"></i> Table </h3>
       </div>
       <div class="panel-body">
+
+        <form class="form-inline text-center">
+          <label for="date-picker"> 
+            Show by Date: 
+          </label>
+
+          <input type="text" 
+          class="form-control secondary-text" 
+          ng-model="dateSelectedLab" 
+          data-date-format="yyyy-MM-dd" 
+          data-min-date=""
+          data-autoclose="1"
+          name="date-picker" 
+          id="date-picker"
+          placeholder="Select Date"
+          ng-change="showByDateLab(dateSelectedLab)"
+          bs-datepicker />
+        </form>
+
         <table datatable="ng" class="table table-hover table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
