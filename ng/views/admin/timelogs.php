@@ -83,6 +83,7 @@ date_default_timezone_set("Asia/Manila");
           </tbody>
         </table>
         <a href="timelog/exportToCsv" class="btn btn-success" ng-if="timelogs.length > 0"> Export to CSV file </a>
+        <a href="#report" class="btn btn-danger" ng-if="timelogs.length > 0"> View PDF Report </a>
       </div>
     </div>
   </div>
