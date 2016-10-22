@@ -36,6 +36,8 @@
 
         <script src="<?php echo base_url('ng/controllers/admin/timelog-controller.js'); ?>"></script>
 
+        <script src="<?php echo base_url('ng/controllers/admin/report-controller.js'); ?>"></script>
+
     </body>
 
     </html>

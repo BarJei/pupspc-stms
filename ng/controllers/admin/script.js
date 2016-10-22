@@ -64,7 +64,7 @@ var app = angular.module('app', [
       controller: 'timelogLabController'
     })
 
-      .when('/report', {
+     .when('/report', {
       templateUrl: view_path + '/report.php',
       controller: 'reportController'
     })
@@ -103,9 +103,9 @@ if (hash === '') {
 
 // to immediately collapse navbar after clicking on mobile
 $(document).on('click', '.navbar-collapse.in', function (e) {
- if ($(e.target).is('a')) {
-  $(this).collapse('hide');
-}
+  if($(e.target).is('a')) {
+    $(this).collapse('hide');
+  }
 });
 
 var host = window.location.host;

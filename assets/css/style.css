@@ -396,3 +396,81 @@ span.input-group-addon
 
 }
 /* date picker */
+
+/* reports page */
+
+div#reports .h1 
+
+{
+
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+div#reports .h2 
+
+{
+
+	font-size: 18px;
+	text-align: center;
+
+}
+
+div#reports .t 
+
+{			
+
+	border: 3px solid black;
+	border-collapse: collapse;
+	text-align: center;
+
+}
+
+div#reports .th 
+
+{
+
+	border: 2px solid black;
+	border-collapse: collapse;
+	width: 10%;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+div#reports .th2
+
+{			
+
+	border: 2px solid black;
+	border-collapse: collapse;
+	width: 5%;
+	font-weight: bold;
+
+}
+
+div#reports .time 
+
+{			
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 5%;
+	font-weight: normal;
+
+}
+
+div#reports .name
+
+{
+
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 15%;
+	text-align: left;
+	font-weight: normal;
+
+}
+
+/* reports page */
