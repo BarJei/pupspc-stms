@@ -67,13 +67,13 @@
 
 				<table style="width:100%;">
 					<tr>
-						<td style="text-align: left;"><b>Time:</b> <u>Date here</u></td>
-						<td style="text-align: right;"><b>Printed on:</b> <u>Date again here</u></td>
+						<td style="text-align: left;"><b>Time:</b> <u id="clock">&nbsp</u></td>
+						<td style="text-align: right;"><b>Printed on:</b> <u>{{dateToday}}</u></td>
 					</tr>
 				</table>
 				<table class="t" style="width:100%;">
 					<thead>
-						<tr>
+						<!-- <tr>
 							<td class="th">Date</td>
 							<td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
@@ -82,7 +82,7 @@
 							<td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td class="th"><b>Name</b></td>
 
@@ -109,29 +109,30 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="reportData in reports"> 
-							<td class="name">{{reportData.firstName + ' ' + reportData.lastName}}</td>
+						<tr ng-repeat="reportData in reports track by $index"> 
+							<td class="name">{{reportData.lastName + ', ' + reportData.firstName}}</td>
 
-							<td class="time">{{reportData.logTime}}</td>
-							<td class="time">{{reportData.logOut}}</td>
+							<td class="time" >{{reportData.logTime[0]}}</td>
+							<td class="time" >{{reportData.logOut[0]}}</td>
 
-							<td class="time">{{reportData.logTime}}</td>
-							<td class="time">{{reportData.logOut}}</td>
+							<td class="time" >{{reportData.logTime[1]}}</td>
+							<td class="time" >{{reportData.logOut[1]}}</td>
 
-							<td class="time">{{reportData.logTime}}</td>
-							<td class="time">{{reportData.logOut}}</td>
+							<td class="time" >{{reportData.logTime[2]}}</td>
+							<td class="time" >{{reportData.logOut[2]}}</td>
 
-							<td class="time">{{reportData.logTime}}</td>
-							<td class="time">{{reportData.logOut}}</td>
+							<td class="time" >{{reportData.logTime[3]}}</td>
+							<td class="time" >{{reportData.logOut[3]}}</td>
 
-							<td class="time">{{reportData.logTime}}</td>
-							<td class="time">{{reportData.logOut}}</td>
+							<td class="time" >{{reportData.logTime[4]}}</td>
+							<td class="time" >{{reportData.logOut[4]}}</td>
 
-							<td class="time">{{reportData.logTime}}</td>
-							<td class="time">{{reportData.logOut}}</td>
+							<td class="time" >{{reportData.logTime[5]}}</td>
+							<td class="time" >{{reportData.logOut[5]}}</td>
 
-							<td class="time">{{reportData.logTime}}</td>
-							<td class="time">{{reportData.logOut}}</td>
+							<td class="time" >{{reportData.logTime[6]}}</td>
+							<td class="time" >{{reportData.logOut[6]}}</td>
+
 						</tr>
 					</tbody>
 				</table>
@@ -139,8 +140,8 @@
 			<p style="text-align: right; font-size: 12px;"><i><b>Certified True Copy</b></i></p>
 			<footer>
 				<center>
-					<p><b>Verified by:</b> <u>pangalan here.</u></p>
-					<p style="position: fixed; bottom: 2px; left: 50%; font-size: 10px;"><i>Page number</i></p>
+					<p><b>Verified by:</b> <u>Prof. Joanne F. Antonio</u></p>
+					<!-- <p style="position: fixed; bottom: 2px; left: 50%; font-size: 10px;"><i>Page number</i></p> -->
 				</center>
 			</footer>
 		</div>

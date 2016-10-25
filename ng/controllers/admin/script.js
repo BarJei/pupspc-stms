@@ -125,3 +125,18 @@ function formatDate(date) {
 
   return [year, month, day].join('-');
 }
+
+function getLast7Days() {
+  var result = [];
+  for (var i=0; i<7; i++) {
+    var d = new Date();
+    d.setDate(d.getDate() - i);
+    result.push({
+      id: i,
+      date: formatDate(d)
+    });
+  }
+
+  return result;
+    // return(result.join(','));
+  }
