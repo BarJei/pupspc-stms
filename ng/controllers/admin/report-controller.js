@@ -6,6 +6,10 @@ app.controller('reportController', function ($http, $scope, cfpLoadingBar) {
 	var dateToday = new Date();
 	$scope.dateToday = formatDate(dateToday);
 
+	$scope.monthName = getMonthName();
+	$scope.last7Days = getLast7Days();
+	// console.log(getLast7Days());
+
 	function getReportsData() {
 
 		// http get method
@@ -56,17 +60,13 @@ app.controller('reportController', function ($http, $scope, cfpLoadingBar) {
 			});
 
 				console.log(arrLogTime);
-
 				$scope.reports = arrLogTime;	
 
 			}).error(function(data) {
 				console.log(data);
 			});
-
 		}
 
-	// console.log(getLast7Days());
+		cfpLoadingBar.complete();
 
-	cfpLoadingBar.complete();
-	
-});
+	});

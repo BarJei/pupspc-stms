@@ -12,10 +12,10 @@ class Reports_model extends CI_Model {
 			GROUP_CONCAT(DATE_FORMAT(logTime, '%H:%i:%s')) AS logTime, 
 			GROUP_CONCAT(DATE_FORMAT(logOut, '%H:%i:%s')) AS logOut")
 		->from(TBL_LOGS)
-		->order_by("logTime")
+		->order_by("lastName")
 		->group_by("studNo")	
 		->join(TBL_STUDENTS, "tbl_timelogs.rfid = tbl_students.rfid")
-		->where("logDate >= DATE_ADD(CURDATE(), INTERVAL -7 DAY)")
+		->where("logDate >= DATE_ADD(CURDATE(), INTERVAL -6 DAY)")
 		->get();
 
 		// $arrLogs = [];

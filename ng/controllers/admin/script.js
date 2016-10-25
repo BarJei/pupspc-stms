@@ -128,10 +128,10 @@ function formatDate(date) {
 
 function getLast7Days() {
   var result = [];
-  for (var i=0; i<7; i++) {
+  for (var i = 0; i < 7; i ++) {
     var d = new Date();
     d.setDate(d.getDate() - i);
-    result.push({
+    result.unshift({
       id: i,
       date: formatDate(d)
     });
@@ -139,4 +139,28 @@ function getLast7Days() {
 
   return result;
     // return(result.join(','));
+  }
+
+  // get current month name
+  function getMonthName() {
+    var date = new Date(),
+    monthsArray = [],
+    month;
+
+    monthsArray[0] = 'January';
+    monthsArray[1] = 'February';
+    monthsArray[2] = 'March';
+    monthsArray[3] = 'April';
+    monthsArray[4] = 'May';
+    monthsArray[5] = 'June';
+    monthsArray[6] = 'July';
+    monthsArray[7] = 'August';
+    monthsArray[8] = 'September';
+    monthsArray[9] = 'October';
+    monthsArray[10] = 'November';
+    monthsArray[11] = 'December';
+
+    month = monthsArray[date.getMonth()];
+
+    return month;
   }

@@ -62,7 +62,7 @@
 				<div class="h2">
 					<b>REPORTS</b>
 					<br />COMPUTER LABORATORY USAGE FORM
-					<br />Time Logs for the Month of <i>MONTH HERE</i>
+					<br />Time Logs for the Month of <i>{{monthName}}</i>
 				</div><br />
 
 				<table style="width:100%;">
@@ -73,16 +73,17 @@
 				</table>
 				<table class="t" style="width:100%;">
 					<thead>
-						<!-- <tr>
+						<tr>
 							<td class="th">Date</td>
+							<td class="th" colspan="2" ng-repeat="day in last7Days">{{day.date}}</td>
+							<!-- <td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
 							<td class="th" colspan="2">{data here}</td>
-							<td class="th" colspan="2">{data here}</td>
-							<td class="th" colspan="2">{data here}</td>
-						</tr> -->
+							<td class="th" colspan="2">{data here}</td> -->
+						</tr>
 						<tr>
 							<td class="th"><b>Name</b></td>
 
