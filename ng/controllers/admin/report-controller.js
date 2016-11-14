@@ -48,11 +48,13 @@ app.controller('reportController', function ($http, $scope, cfpLoadingBar) {
 					logOut.logOut = _logOut;
 				});
 
+				// TO DO LOGDATE TO DO
 				arrLogTime.push({
 					firstName: value.firstName,
 					middleName: value.middleName,
 					lastName: value.lastName,
 					rfid: rfid,
+					logDate: value.logDate,
 					logTime,
 					logOut
 				});
